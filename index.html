@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Layered wood golf course maps, hole-in-one plaques and city maps, handmade in Gilbert, Arizona.">
+<title>Two Way Miss Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a framed-map page. Hairline inset border echoes the plaques; content sits on a French-cream "board", work shown on a masonry wall. */
+:root{
+  --paper:#F3EEE2;      /* French Cream ground */
+  --board:#FBF8F1;      /* inset panel */
+  --ink:#1D2A22;        /* course green-black text */
+  --muted:#5F6B5F;
+  --green:#24493A;      /* fairway */
+  --birch:#C9A876;      /* Baltic birch */
+  --water:#1F4FA8;      /* resin-blue accent */
+  --line:#D8CFBC;
+  --display:"Cormorant Garamond","EB Garamond",Garamond,Georgia,serif;
+  --body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#111813;--board:#18211B;--ink:#ECE5D4;--muted:#A7AE9F;--green:#8FC2A3;--birch:#D9BC8C;--water:#7FA6F0;--line:#2E3A31;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#111813;--board:#18211B;--ink:#ECE5D4;--muted:#A7AE9F;--green:#8FC2A3;--birch:#D9BC8C;--water:#7FA6F0;--line:#2E3A31;color-scheme:dark}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}img{max-width:100%}[hidden]{display:none!important}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 var(--body);padding-inline:clamp(16px,4vw,48px);padding-block:0}
+a{color:inherit}
+.wrap{max-width:1180px;margin-inline:auto}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.05;text-wrap:balance;margin:0}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:.5em;padding:.8em 1.3em;border:1px solid var(--ink);font:600 14px/1 var(--body);letter-spacing:.02em;text-decoration:none;background:var(--ink);color:var(--paper);cursor:pointer}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn:hover{background:var(--green);border-color:var(--green);color:var(--paper)}
+:focus-visible{outline:2px solid var(--water);outline-offset:3px}
+
+/* header */
+header.top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:22px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.mark{display:flex;align-items:center;gap:12px;text-decoration:none}
+.mark svg{width:34px;height:34px;color:var(--green)}
+.mark b{font:600 22px/1 var(--display);letter-spacing:.02em}
+.mark small{display:block;font:500 10px/1.4 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+nav{display:flex;gap:22px;flex-wrap:wrap;font-size:14px}
+nav a{text-decoration:none;color:var(--muted)} nav a:hover{color:var(--ink)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(24px,5vw,72px);align-items:center;padding-block:clamp(36px,7vw,88px)}
+.hero h1{font-size:clamp(44px,7.2vw,92px);letter-spacing:-.01em}
+.hero h1 em{color:var(--green);font-style:italic}
+.hero p.lede{font-size:18px;max-width:34em;color:var(--muted);margin:22px 0 30px}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
+.plaque{position:relative;background:var(--board);padding:clamp(10px,1.6vw,18px);border:1px solid var(--line);box-shadow:0 30px 60px -30px rgba(20,30,20,.45)}
+.plaque::after{content:"";position:absolute;inset:clamp(4px,.7vw,8px);border:1px solid var(--line);pointer-events:none}
+.plaque img{display:block;width:100%;height:auto}
+.scorecard{display:grid;grid-template-columns:repeat(4,auto);justify-content:start;gap:4px 22px;margin-top:14px;font:400 12px/1.4 var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
+.scorecard b{display:block;font-weight:500;color:var(--ink);font-size:15px}
+
+/* collections */
+section{padding-block:clamp(48px,7vw,96px);border-top:1px solid var(--line)}
+.sechead{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:32px}
+.sechead h2{font-size:clamp(34px,4.6vw,56px)}
+.sechead p{max-width:36em;color:var(--muted);margin:10px 0 0}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.col{display:flex;flex-direction:column;gap:14px;text-decoration:none;cursor:pointer;background:none;border:0;padding:0;text-align:left;color:inherit;font:inherit}
+.col .ph{aspect-ratio:4/3;overflow:hidden;border:1px solid var(--line);background:var(--board)}
+.col img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.col:hover img{transform:scale(1.04)}
+.col h3{font-size:30px}
+.col p{margin:0;color:var(--muted);font-size:15px}
+.col .eyebrow{display:flex;justify-content:space-between}
+
+/* gallery */
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.filters button{font:500 13px/1 var(--body);padding:.7em 1em;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.grid{columns:3 300px;column-gap:18px}
+.tile{break-inside:avoid;margin:0 0 18px;cursor:zoom-in;display:block;width:100%;border:0;padding:0;background:none;text-align:left;color:inherit;font:inherit}
+.tile img{display:block;width:100%;height:auto;border:1px solid var(--line);background:var(--board)}
+.tile figcaption{display:flex;justify-content:space-between;gap:12px;padding:10px 2px 0;font-size:14px}
+.tile figcaption span:last-child{font:400 11px/1.6 var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.08em;white-space:nowrap}
+.tile:hover img{filter:brightness(1.04) saturate(1.05)}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;counter-reset:s}
+.step{border-top:2px solid var(--green);padding-top:18px}
+.step .n{font:500 12px/1 var(--mono);color:var(--green);letter-spacing:.12em}
+.step h3{font-size:26px;margin:10px 0 8px}
+.step p{margin:0;color:var(--muted);font-size:15px}
+.detail{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px}
+.detail img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3;border:1px solid var(--line)}
+
+/* clients */
+.people{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.people img{width:100%;aspect-ratio:3/4;object-fit:cover;border:1px solid var(--line)}
+
+/* commission */
+.commission{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(24px,5vw,64px);align-items:start}
+.commission ul{padding:0;margin:20px 0 0;list-style:none;display:grid;gap:10px}
+.commission li{display:flex;gap:12px;color:var(--muted)}
+.commission li::before{content:"";flex:0 0 8px;height:8px;margin-top:.55em;border-radius:50%;background:var(--green)}
+form{background:var(--board);border:1px solid var(--line);padding:clamp(18px,3vw,32px);display:grid;grid-template-columns:1fr 1fr;gap:14px}
+form .full{grid-column:1/-1}
+label{display:grid;gap:6px;font:500 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);min-width:0}
+input,select,textarea{font:15px/1.4 var(--body);color:var(--ink);background:var(--paper);border:1px solid var(--line);padding:.7em .8em;width:100%;text-transform:none;letter-spacing:0}
+textarea{min-height:90px;resize:vertical}
+pre#out{grid-column:1/-1;white-space:pre-wrap;font:13px/1.5 var(--mono);background:var(--paper);border:1px dashed var(--line);padding:12px;margin:0}
+.formnote{grid-column:1/-1;font-size:13px;color:var(--muted);margin:0}
+
+footer{border-top:1px solid var(--line);padding-block:32px 48px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:14px}
+
+/* lightbox */
+dialog{border:0;padding:0;background:transparent;max-width:min(1200px,94vw);max-height:94vh;color:var(--ink)}
+dialog::backdrop{background:rgba(10,16,12,.86)}
+.lb{background:var(--board);padding:14px;display:grid;gap:10px}
+.lb img{max-height:78vh;width:auto;max-width:100%;margin-inline:auto;display:block}
+.lb .bar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.lb .bar h3{font-size:26px}
+.lb .bar p{margin:2px 0 0;font:12px/1.4 var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.lb .nav{display:flex;gap:8px}
+.lb .nav button{width:42px;height:42px;border:1px solid var(--line);background:var(--paper);color:var(--ink);font-size:18px;cursor:pointer}
+
+@media (max-width:900px){
+  .hero,.commission{grid-template-columns:1fr}
+  .cols{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .people{grid-template-columns:1fr 1fr}
+}
+@media (max-width:560px){
+  .cols,.steps,.detail{grid-template-columns:1fr}
+  form{grid-template-columns:1fr}
+  nav{gap:14px}
+  .scorecard{grid-template-columns:repeat(2,auto)}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<header class="top">
+  <a class="mark" href="#top" aria-label="Two Way Miss Studio home">
+    <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="20" cy="20" r="18" stroke-width="1.4"/><path d="M8 20h24M8 20l6-6M8 20l6 6M32 20l-6-6M32 20l-6 6"/></svg>
+    <span><b>Two Way Miss</b><small>Golf course art · Gilbert, AZ</small></span>
+  </a>
+  <nav aria-label="Sections">
+    <a href="#collections">Collections</a><a href="#work">The work</a><a href="#process">Process</a><a href="#commission">Commission</a>
+  </nav>
+</header>
+
+<div class="hero" id="top">
+  <div>
+    <p class="eyebrow">Layered wood maps · cut & engraved by hand</p>
+    <h1>Your course, <em>cut in layers.</em></h1>
+    <p class="lede">Two Way Miss Studio turns the holes you play into layered wood art. Fairways, greens, bunkers and water are cut from Baltic birch, engraved, painted and assembled by hand. Each piece records the hole, the yardage and the day.</p>
+    <div class="ctas">
+      <a class="btn" href="#commission">Start a custom map</a>
+      <a class="btn ghost" data-etsy href="#">Shop on Etsy ↗</a>
+    </div>
+  </div>
+  <figure class="plaque" style="margin:0">
+    <img src="img/IMG_2370.jpg" alt="Layered wood hole-in-one plaque of Seville Golf & Country Club hole 17, with a blue water hazard around an island green">
+    <figcaption class="scorecard">
+      <span>Hole<b>#17</b></span><span>Par<b>3</b></span><span>Yards<b>147</b></span><span>Club<b>7 iron</b></span>
+    </figcaption>
+  </figure>
+</div>
+
+<section id="collections">
+  <div class="sechead">
+    <div><p class="eyebrow">Collections</p><h2>Three ways to keep a place</h2></div>
+    <p>Every piece starts from real map data. It is scaled to the frame and built in layers you can feel.</p>
+  </div>
+  <div class="cols">
+    <button class="col" data-go="ace">
+      <div class="ph"><img src="img/t/IMG_2237.jpg" alt="Hole-in-one plaque for Seville hole 17" loading="lazy"></div>
+      <span class="eyebrow"><span>Hole-in-one</span><span>Single hole</span></span>
+      <h3>The ace plaque</h3>
+      <p>The hole you aced, with your name, the date, the yardage and the club you hit.</p>
+    </button>
+    <button class="col" data-go="course">
+      <div class="ph"><img src="img/t/IMG_1821.jpg" alt="Full 18-hole map of Seville Golf & Country Club" loading="lazy"></div>
+      <span class="eyebrow"><span>Course maps</span><span>9 or 18 holes</span></span>
+      <h3>The full course</h3>
+      <p>Your home club or a bucket-list major, every hole in its place, with par and total yardage.</p>
+    </button>
+    <button class="col" data-go="city">
+      <div class="ph"><img src="img/t/IMG_2539.jpg" alt="Layered wood map of Santa Cruz, California coastline" loading="lazy"></div>
+      <span class="eyebrow"><span>City & coast</span><span>Street maps</span></span>
+      <h3>Hometowns</h3>
+      <p>Street grids, shorelines and lakes for the places that matter to you, from Gilbert to Santa Cruz.</p>
+    </button>
+  </div>
+</section>
+
+<section id="work">
+  <div class="sechead">
+    <div><p class="eyebrow">The work</p><h2>Recent pieces</h2></div>
+    <div class="filters" role="group" aria-label="Filter pieces">
+      <button data-f="all" aria-pressed="true">All</button>
+      <button data-f="ace" aria-pressed="false">Hole-in-one</button>
+      <button data-f="hole" aria-pressed="false">Signature holes</button>
+      <button data-f="course" aria-pressed="false">Course maps</button>
+      <button data-f="city" aria-pressed="false">City & coast</button>
+    </div>
+  </div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section id="process">
+  <div class="sechead">
+    <div><p class="eyebrow">Process</p><h2>From satellite to wall</h2></div>
+    <p>Every map goes through the same four steps in the studio in Gilbert, Arizona.</p>
+  </div>
+  <div class="steps">
+    <div class="step"><span class="n">STEP 1</span><h3>Map the ground</h3><p>Fairways, greens, bunkers, water and cart paths are traced from OpenStreetMap data, so every shape matches the real course.</p></div>
+    <div class="step"><span class="n">STEP 2</span><h3>Draw the piece</h3><p>The layout is redrawn in Illustrator with hole badges, a yardage scale and lettering in the club's own style.</p></div>
+    <div class="step"><span class="n">STEP 3</span><h3>Cut & engrave</h3><p>Each layer is laser cut from Baltic birch. Bunkers get depth from graded engraving, and mowing lines are etched into the greens.</p></div>
+    <div class="step"><span class="n">STEP 4</span><h3>Finish by hand</h3><p>Layers are stained, painted and sealed, then assembled with raised trees and framed for the wall or the desk.</p></div>
+  </div>
+  <div class="detail">
+    <img src="img/t/IMG_2077.jpg" alt="Close-up of raised trees, glossy blue water and engraved green on a layered plaque" loading="lazy">
+    <img src="img/t/IMG_2058.jpg" alt="Hammond Golf Club map in three finishes: natural birch, white and grey" loading="lazy">
+  </div>
+</section>
+
+<section id="clients">
+  <div class="sechead">
+    <div><p class="eyebrow">Delivered</p><h2>In good hands</h2></div>
+    <p>A few of the golfers who now have their ace on the wall.</p>
+  </div>
+  <div class="people">
+    <img src="img/t/IMG_2338.jpg" alt="Golfer holding his Seville hole-in-one plaque at the clubhouse" loading="lazy">
+    <img src="img/t/IMG_2238.jpg" alt="Golfer holding his plaque on the course" loading="lazy">
+    <img src="img/t/IMG_1609.jpg" alt="Customer holding a hole-in-one plaque beside his truck" loading="lazy">
+    <img src="img/t/IMG_2507.jpg" alt="Golfer on the range holding two Seville hole plaques" loading="lazy">
+  </div>
+</section>
+
+<section id="commission" class="commission">
+  <div>
+    <p class="eyebrow">Commission</p>
+    <h2 style="font-size:clamp(34px,4.6vw,56px)">Made a hole-in-one?<br>Let's make it permanent.</h2>
+    <ul>
+      <li>Any course with mapped holes, anywhere in the world.</li>
+      <li>Natural birch, white or grey finishes.</li>
+      <li>Your name, date, yardage and club engraved on the piece.</li>
+      <li>A proof to approve before anything is cut.</li>
+    </ul>
+  </div>
+  <form id="req" novalidate>
+    <label class="full" for="f-type">What would you like
+      <select id="f-type"><option>Hole-in-one plaque</option><option>Full course map</option><option>Single signature hole</option><option>City or coastline map</option></select>
+    </label>
+    <label class="full" for="f-course">Course or place<input id="f-course" placeholder="Seville Golf & Country Club, Gilbert AZ"></label>
+    <label for="f-hole">Hole<input id="f-hole" placeholder="17"></label>
+    <label for="f-date">Date<input id="f-date" type="date"></label>
+    <label for="f-yds">Yards<input id="f-yds" inputmode="numeric" placeholder="147"></label>
+    <label for="f-club">Club<input id="f-club" placeholder="7 iron"></label>
+    <label class="full" for="f-name">Name on the plaque<input id="f-name" placeholder="Brad Ingarfield"></label>
+    <label class="full" for="f-notes">Anything else<textarea id="f-notes" placeholder="Finish, size, a gift deadline…"></textarea></label>
+    <pre id="out" hidden></pre>
+    <div class="full" style="display:flex;gap:10px;flex-wrap:wrap">
+      <button class="btn" type="submit">Copy my request</button>
+      <a class="btn ghost" data-etsy href="#">Message us on Etsy ↗</a>
+    </div>
+    <p class="formnote" id="note">Copy your request, then paste it into a message to the shop on Etsy.</p>
+  </form>
+</section>
+
+<footer>
+  <span>© 2026 Two Way Miss Studio LLC · Gilbert, Arizona</span>
+  <span><a data-etsy href="#">Etsy shop</a></span>
+</footer>
+</div>
+
+<dialog id="lb" aria-label="Piece detail">
+  <div class="lb">
+    <img id="lb-img" alt="">
+    <div class="bar">
+      <div><h3 id="lb-t"></h3><p id="lb-m"></p></div>
+      <div class="nav"><button id="lb-p" aria-label="Previous">←</button><button id="lb-n" aria-label="Next">→</button><button id="lb-x" aria-label="Close">✕</button></div>
+    </div>
+  </div>
+</dialog>
+
+<script>
+// Set this to your Etsy shop URL.
+const ETSY_URL = "https://twowaymiss.etsy.com";
+document.querySelectorAll("[data-etsy]").forEach(a=>{a.href=ETSY_URL;a.target="_blank";a.rel="noopener"});
+
+const PIECES = [
+  {f:"IMG_2370",c:"ace",t:"Seville #17 · Hole-in-one",m:"Gilbert, AZ · Par 3 · 147 yds · 7 iron"},
+  {f:"IMG_1821",c:"course",t:"Seville Golf & Country Club",m:"Gilbert, AZ · Par 72 · 6,565 yds"},
+  {f:"IMG_2458",c:"ace",t:"Keller Golf Club #15",m:"Maplewood, MN · 145 yds · 4 iron"},
+  {f:"IMG_1767",c:"course",t:"Shinnecock Hills",m:"Southampton, NY · Par 70"},
+  {f:"gilbert-desk",c:"city",t:"Gilbert, Arizona",m:"Street map · Black & white"},
+  {f:"IMG_2419",c:"hole",t:"Seville #16 & #17",m:"Par 4 · 290 yds / Par 3 · 130 yds"},
+  {f:"IMG_2237",c:"ace",t:"Seville #17 · Hole-in-one",m:"132 yds · Gap wedge"},
+  {f:"IMG_2061",c:"course",t:"Hammond Golf Club",m:"Hammond, WI · Par 36 · 3,137 yds"},
+  {f:"IMG_2539",c:"city",t:"Santa Cruz, California",m:"Coastline · Layered depths"},
+  {f:"IMG_2457",c:"hole",t:"Seville #8",m:"Par 3 · 185 yds · Handicap 15"},
+  {f:"IMG_1686",c:"ace",t:"Seville #17 · Two aces",m:"Par 3 · 139 yds · 2018 & 2020"},
+  {f:"IMG_2070",c:"city",t:"Neenah, Wisconsin",m:"Lake Winnebago shoreline"},
+  {f:"IMG_2505",c:"hole",t:"Seville #14 · White",m:"Par 3 · 170 yds"},
+  {f:"IMG_2506",c:"hole",t:"Seville #14 · Natural",m:"Par 3 · 170 yds"},
+  {f:"IMG_1710",c:"course",t:"Shinnecock Hills · Three frames",m:"Walnut, white and black"},
+  {f:"IMG_2327",c:"city",t:"Arizona Counties",m:"Stained birch · Large format"},
+  {f:"IMG_2459",c:"hole",t:"Seville #14",m:"Par 3 · 170 yds · Handicap 18"},
+  {f:"IMG_1820",c:"course",t:"Sunbird Golf Club",m:"Two finishes"},
+  {f:"IMG_2460",c:"hole",t:"Seville #4",m:"Par 3 · 160 yds · Handicap 17"},
+  {f:"IMG_2655",c:"city",t:"Pleasure Point, California",m:"Coastline with inset"},
+  {f:"IMG_2461",c:"hole",t:"Seville #16 & #17",m:"With neighboring homes"},
+  {f:"IMG_1735",c:"course",t:"Shinnecock Hills",m:"Walnut floater frame"},
+  {f:"IMG_1959",c:"city",t:"Gilbert, Arizona · Two sizes",m:"Street map"},
+  {f:"IMG_1876",c:"course",t:"Shinnecock Hills · Two styles",m:"Line art and layered"},
+  {f:"IMG_2058",c:"course",t:"Hammond Golf Club · Finishes",m:"Natural, white and grey"},
+  {f:"IMG_2077",c:"ace",t:"Detail · Seville #17",m:"Raised trees and water"},
+];
+const LABEL={ace:"Hole-in-one",hole:"Signature hole",course:"Course map",city:"City & coast"};
+const grid=document.getElementById("grid");
+grid.innerHTML=PIECES.map((p,i)=>`<figure class="tile" data-c="${p.c}" data-i="${i}" tabindex="0" role="button" aria-label="${p.t}, open larger">
+  <img src="img/t/${p.f}.jpg" alt="${p.t}" loading="lazy"><figcaption><span>${p.t}</span><span>${LABEL[p.c]}</span></figcaption></figure>`).join("");
+
+let filter="all";
+function setFilter(f){
+  filter=f;
+  document.querySelectorAll(".filters button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.f===f));
+  grid.querySelectorAll(".tile").forEach(t=>t.hidden=!(f==="all"||t.dataset.c===f));
+}
+document.querySelectorAll(".filters button").forEach(b=>b.onclick=()=>setFilter(b.dataset.f));
+document.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>{setFilter(b.dataset.go);document.getElementById("work").scrollIntoView({behavior:"smooth"})});
+
+const lb=document.getElementById("lb");let cur=0;
+const visible=()=>[...grid.querySelectorAll(".tile:not([hidden])")].map(t=>+t.dataset.i);
+function show(i){cur=i;const p=PIECES[i];const im=document.getElementById("lb-img");im.src=`img/${p.f}.jpg`;im.alt=p.t;
+  document.getElementById("lb-t").textContent=p.t;document.getElementById("lb-m").textContent=`${LABEL[p.c]} · ${p.m}`;}
+function step(d){const v=visible();const k=v.indexOf(cur);show(v[(k+d+v.length)%v.length]);}
+grid.addEventListener("click",e=>{const t=e.target.closest(".tile");if(t){show(+t.dataset.i);lb.showModal();}});
+grid.addEventListener("keydown",e=>{const t=e.target.closest(".tile");if(t&&(e.key==="Enter"||e.key===" ")){e.preventDefault();show(+t.dataset.i);lb.showModal();}});
+document.getElementById("lb-p").onclick=()=>step(-1);
+document.getElementById("lb-n").onclick=()=>step(1);
+document.getElementById("lb-x").onclick=()=>lb.close();
+lb.addEventListener("click",e=>{if(e.target===lb)lb.close();});
+lb.addEventListener("keydown",e=>{if(e.key==="ArrowLeft")step(-1);if(e.key==="ArrowRight")step(1);});
+
+document.getElementById("req").addEventListener("submit",async e=>{
+  e.preventDefault();
+  const v=id=>document.getElementById(id).value.trim();
+  const lines=[`Request: ${v("f-type")}`,v("f-course")&&`Course: ${v("f-course")}`,v("f-hole")&&`Hole: ${v("f-hole")}`,v("f-date")&&`Date: ${v("f-date")}`,v("f-yds")&&`Yards: ${v("f-yds")}`,v("f-club")&&`Club: ${v("f-club")}`,v("f-name")&&`Name: ${v("f-name")}`,v("f-notes")&&`Notes: ${v("f-notes")}`].filter(Boolean).join("\n");
+  const out=document.getElementById("out");out.textContent=lines;out.hidden=false;
+  const note=document.getElementById("note");
+  try{await navigator.clipboard.writeText(lines);note.textContent="Copied. Paste it into a message to the shop on Etsy.";}
+  catch{const r=document.createRange();r.selectNodeContents(out);const s=getSelection();s.removeAllRanges();s.addRange(r);note.textContent="Your request is selected above. Copy it, then paste it into an Etsy message.";}
+});
+</script>
+</body>
+</html>
