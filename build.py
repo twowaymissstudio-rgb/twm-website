@@ -18,6 +18,7 @@ from urllib.parse import urlencode
 ROOT = os.path.dirname(os.path.abspath(__file__))
 DATA = json.load(open(os.path.join(ROOT, "listings.json"), encoding="utf-8"))
 SITE, CATS, LISTINGS = DATA["site"], DATA["categories"], DATA["listings"]
+HOME = DATA.get("home", {})
 YEAR = date.today().year
 e = lambda s: html.escape(str(s), quote=True)
 
@@ -43,6 +44,9 @@ def check_photos():
         for f, _ in l["photos"]:
             if not os.path.exists(os.path.join(ROOT, "img", f)):
                 missing.append(f"{l['slug']}: img/{f}")
+    for f in [HOME.get("hero"), HOME.get("city_cover")] + [x[0] for x in HOME.get("process", [])] + [x[0] for x in DATA.get("delivered", [])]:
+        if f and not os.path.exists(os.path.join(ROOT, "img", f)):
+            missing.append(f"home page: img/{f}")
     if missing:
         raise SystemExit("Missing photos:\n  " + "\n  ".join(missing))
 
@@ -118,7 +122,10 @@ def card(l, p):
 def build_index():
     by_cat = {c: [l for l in LISTINGS if l["category"] == c] for c in CATS}
     cover = lambda c, fallback: by_cat[c][0]["photos"][0][0] if by_cat[c] else fallback
-    hero = LISTINGS[0]
+    hero = next((l for l in LISTINGS if l["slug"] == HOME.get("hero_listing")), LISTINGS[0])
+    hero_img = HOME.get("hero") or hero["photos"][0][0]
+    city_cover = HOME.get("city_cover") or cover("city", "IMG_2539.jpg")
+    process = "".join(f'<img src="img/t/{e(f)}" alt="{e(a)}" loading="lazy">' for f, a in HOME.get("process", []))
     filters = '<button data-f="all" aria-pressed="true">All</button>' + "".join(
         f'<button data-f="{c}" aria-pressed="false">{e(n)}</button>' for c, n in CATS.items())
     delivered = "".join(f'<img src="img/t/{e(f)}" alt="{e(a)}" loading="lazy">' for f, a in DATA["delivered"])
@@ -136,7 +143,7 @@ def build_index():
     </div>
   </div>
   <a class="plaque" href="listing/{e(hero['slug'])}/" style="display:block;text-decoration:none;color:inherit">
-    <img src="img/IMG_2370.jpg" alt="Layered wood hole-in-one plaque of Seville hole 17 with a blue water hazard around an island green">
+    <img src="img/{e(hero_img)}" alt="Layered wood hole-in-one plaque of Seville hole 17 with a blue water hazard around an island green">
     <span class="scorecard">
       <span>Hole<b>#17</b></span><span>Par<b>3</b></span><span>Yards<b>147</b></span><span>Club<b>7 iron</b></span>
     </span>
@@ -162,7 +169,7 @@ def build_index():
       <p>Your home club or a bucket-list major, every hole in its place, with par and total yardage.</p>
     </button>
     <button class="col" data-go="city">
-      <div class="ph"><img src="img/t/IMG_2539.jpg" alt="" loading="lazy"></div>
+      <div class="ph"><img src="img/t/{e(city_cover)}" alt="" loading="lazy"></div>
       <span class="eyebrow"><span>City & coast</span><span>{len(by_cat['city'])} listings</span></span>
       <h3>Hometowns</h3>
       <p>Street grids, shorelines and lakes for the places that matter to you, from Gilbert to Santa Cruz.</p>
@@ -191,10 +198,7 @@ def build_index():
     <div class="step"><span class="n">STEP 3</span><h3>Cut & engrave</h3><p>Each layer is laser cut from Baltic birch. Bunkers get depth from graded engraving, and mowing lines are etched into the greens.</p></div>
     <div class="step"><span class="n">STEP 4</span><h3>Finish by hand</h3><p>Layers are stained, painted and sealed, then assembled with raised trees and framed for the wall or the desk.</p></div>
   </div>
-  <div class="detail">
-    <img src="img/t/IMG_2077.jpg" alt="Close-up of raised trees, glossy blue water and engraved green on a layered plaque" loading="lazy">
-    <img src="img/t/IMG_2058.jpg" alt="Hammond Golf Club map in three finishes: natural birch, white and grey" loading="lazy">
-  </div>
+  <div class="detail">{process}</div>
 </section>
 
 <section id="clients">
@@ -235,7 +239,7 @@ def build_index():
 </section>
 """
     desc = "Layered wood golf course maps, hole-in-one plaques and city maps, handmade in Gilbert, Arizona."
-    out = page(SITE["name"], desc, body, "", SITE["base_url"], SITE["base_url"] + "img/IMG_2370.jpg")
+    out = page(SITE["name"], desc, body, "", SITE["base_url"], SITE["base_url"] + "img/" + (HOME.get("hero") or LISTINGS[0]["photos"][0][0]))
     open(os.path.join(ROOT, "index.html"), "w", encoding="utf-8").write(out)
 
 

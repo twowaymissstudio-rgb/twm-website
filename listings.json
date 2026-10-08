@@ -10,11 +10,38 @@
     "course": "Course maps",
     "city": "City & coast"
   },
+  "home": {
+    "hero": "IMG_2370.jpg",
+    "hero_listing": "seville-17-hole-in-one",
+    "city_cover": "IMG_2539.jpg",
+    "process": [
+      [
+        "IMG_2077.jpg",
+        "Close-up of raised trees, glossy blue water and engraved green on a layered plaque"
+      ],
+      [
+        "IMG_2058.jpg",
+        "Hammond Golf Club map in three finishes: natural birch, white and grey"
+      ]
+    ]
+  },
   "delivered": [
-    ["IMG_2338.jpg", "Golfer holding his Seville hole-in-one plaque at the clubhouse"],
-    ["IMG_2238.jpg", "Golfer holding his plaque on the course"],
-    ["IMG_1609.jpg", "Customer holding a plaque beside his truck"],
-    ["IMG_2507.jpg", "Golfer on the range holding two Seville hole plaques"]
+    [
+      "IMG_2338.jpg",
+      "Golfer holding his Seville hole-in-one plaque at the clubhouse"
+    ],
+    [
+      "IMG_2238.jpg",
+      "Golfer holding his plaque on the course"
+    ],
+    [
+      "IMG_1609.jpg",
+      "Customer holding a plaque beside his truck"
+    ],
+    [
+      "IMG_2507.jpg",
+      "Golfer on the range holding two Seville hole plaques"
+    ]
   ],
   "listings": [
     {
@@ -22,18 +49,53 @@
       "title": "Seville #17 Hole-in-One Plaque",
       "category": "ace",
       "location": "Seville Golf & Country Club · Gilbert, Arizona",
-      "specs": [["Hole", "#17"], ["Par", "3"], ["Handicap", "14"], ["Engraved with", "Name, date, yards, club"]],
+      "specs": [
+        [
+          "Hole",
+          "#17"
+        ],
+        [
+          "Par",
+          "3"
+        ],
+        [
+          "Handicap",
+          "14"
+        ],
+        [
+          "Engraved with",
+          "Name, date, yards, club"
+        ]
+      ],
       "description": [
         "Seville's island-green par 3, built in layers of Baltic birch with a glossy blue water hazard and raised trees.",
         "Each plaque is engraved with the golfer's name, the date of the ace, the yardage and the club. These photos show plaques made for several different aces, including one golfer who has holed it twice."
       ],
       "photos": [
-        ["IMG_2370.jpg", "Seville hole 17 hole-in-one plaque, 147 yards with a 7 iron"],
-        ["IMG_2237.jpg", "Seville hole 17 plaque, 132 yards with a gap wedge"],
-        ["IMG_1686.jpg", "Seville hole 17 plaque recording two holes-in-one, 2018 and 2020"],
-        ["IMG_2077.jpg", "Close-up of the raised trees, water and engraved green"],
-        ["IMG_2338.jpg", "A golfer holding his finished plaque at the clubhouse"],
-        ["IMG_2238.jpg", "A golfer holding his finished plaque on the course"]
+        [
+          "IMG_2370.jpg",
+          "Seville hole 17 hole-in-one plaque, 147 yards with a 7 iron"
+        ],
+        [
+          "IMG_2237.jpg",
+          "Seville hole 17 plaque, 132 yards with a gap wedge"
+        ],
+        [
+          "IMG_1686.jpg",
+          "Seville hole 17 plaque recording two holes-in-one, 2018 and 2020"
+        ],
+        [
+          "IMG_2077.jpg",
+          "Close-up of the raised trees, water and engraved green"
+        ],
+        [
+          "IMG_2338.jpg",
+          "A golfer holding his finished plaque at the clubhouse"
+        ],
+        [
+          "IMG_2238.jpg",
+          "A golfer holding his finished plaque on the course"
+        ]
       ]
     },
     {
@@ -41,13 +103,33 @@
       "title": "Keller Golf Club #15 Hole-in-One",
       "category": "ace",
       "location": "Keller Golf Club · Maplewood, Minnesota",
-      "specs": [["Hole", "#15"], ["Yards", "145"], ["Club", "4 iron"], ["Ace", "August 11, 1988"]],
+      "specs": [
+        [
+          "Hole",
+          "#15"
+        ],
+        [
+          "Yards",
+          "145"
+        ],
+        [
+          "Club",
+          "4 iron"
+        ],
+        [
+          "Ace",
+          "August 11, 1988"
+        ]
+      ],
       "description": [
         "A layered hole-in-one plaque for Keller's 15th, with a deep blue pond, mowing lines on the green and hand-placed trees.",
         "Proof that an ace never gets old. This one went in on August 11, 1988. Any hole at any course can be made the same way, however long ago it happened."
       ],
       "photos": [
-        ["IMG_2458.jpg", "Keller Golf Club hole 15 hole-in-one plaque"]
+        [
+          "IMG_2458.jpg",
+          "Keller Golf Club hole 15 hole-in-one plaque"
+        ]
       ]
     },
     {
@@ -55,14 +137,33 @@
       "title": "Seville #16 & #17 Plaque",
       "category": "hole",
       "location": "Seville Golf & Country Club · Gilbert, Arizona",
-      "specs": [["Hole 16", "Par 4 · 290 yds"], ["Hole 17", "Par 3 · 130 yds"], ["Includes", "Neighboring homes and streets"]],
+      "specs": [
+        [
+          "Hole 16",
+          "Par 4 · 290 yds"
+        ],
+        [
+          "Hole 17",
+          "Par 3 · 130 yds"
+        ],
+        [
+          "Includes",
+          "Neighboring homes and streets"
+        ]
+      ],
       "description": [
         "Two of Seville's signature holes on one piece: the short par-4 16th and the island-green 17th.",
         "The surrounding homes and streets are cut and engraved too. It makes a good gift for anyone who lives on the course."
       ],
       "photos": [
-        ["IMG_2419.jpg", "Seville holes 16 and 17 plaque in a walnut frame"],
-        ["IMG_2461.jpg", "Seville holes 16 and 17 plaque showing neighboring homes"]
+        [
+          "IMG_2419.jpg",
+          "Seville holes 16 and 17 plaque in a walnut frame"
+        ],
+        [
+          "IMG_2461.jpg",
+          "Seville holes 16 and 17 plaque showing neighboring homes"
+        ]
       ]
     },
     {
@@ -70,16 +171,49 @@
       "title": "Seville #14 Plaque",
       "category": "hole",
       "location": "Seville Golf & Country Club · Gilbert, Arizona",
-      "specs": [["Hole", "#14"], ["Par", "3"], ["Yards", "170"], ["Handicap", "18"], ["Finishes", "Natural birch, white"]],
+      "specs": [
+        [
+          "Hole",
+          "#14"
+        ],
+        [
+          "Par",
+          "3"
+        ],
+        [
+          "Yards",
+          "170"
+        ],
+        [
+          "Handicap",
+          "18"
+        ],
+        [
+          "Finishes",
+          "Natural birch, white"
+        ]
+      ],
       "description": [
         "Seville's 14th with the row of homes along E. Virgil Dr cut in raised, stained wood.",
         "Available in a natural birch finish or a white border, shown side by side here."
       ],
       "photos": [
-        ["IMG_2505.jpg", "Seville hole 14 plaque with a white border"],
-        ["IMG_2506.jpg", "Seville hole 14 plaque in natural birch"],
-        ["IMG_2459.jpg", "Seville hole 14 plaque without homes"],
-        ["IMG_2507.jpg", "A golfer on the range holding two Seville plaques"]
+        [
+          "IMG_2505.jpg",
+          "Seville hole 14 plaque with a white border"
+        ],
+        [
+          "IMG_2506.jpg",
+          "Seville hole 14 plaque in natural birch"
+        ],
+        [
+          "IMG_2459.jpg",
+          "Seville hole 14 plaque without homes"
+        ],
+        [
+          "IMG_2507.jpg",
+          "A golfer on the range holding two Seville plaques"
+        ]
       ]
     },
     {
@@ -87,12 +221,32 @@
       "title": "Seville #8 Plaque",
       "category": "hole",
       "location": "Seville Golf & Country Club · Gilbert, Arizona",
-      "specs": [["Hole", "#8"], ["Par", "3"], ["Yards", "185"], ["Handicap", "15"]],
+      "specs": [
+        [
+          "Hole",
+          "#8"
+        ],
+        [
+          "Par",
+          "3"
+        ],
+        [
+          "Yards",
+          "185"
+        ],
+        [
+          "Handicap",
+          "15"
+        ]
+      ],
       "description": [
         "The long par-3 8th at Seville, with a sweeping desert fairway, a pale blue pond and raised trees."
       ],
       "photos": [
-        ["IMG_2457.jpg", "Seville hole 8 plaque"]
+        [
+          "IMG_2457.jpg",
+          "Seville hole 8 plaque"
+        ]
       ]
     },
     {
@@ -100,12 +254,32 @@
       "title": "Seville #4 Plaque",
       "category": "hole",
       "location": "Seville Golf & Country Club · Gilbert, Arizona",
-      "specs": [["Hole", "#4"], ["Par", "3"], ["Yards", "160"], ["Handicap", "17"]],
+      "specs": [
+        [
+          "Hole",
+          "#4"
+        ],
+        [
+          "Par",
+          "3"
+        ],
+        [
+          "Yards",
+          "160"
+        ],
+        [
+          "Handicap",
+          "17"
+        ]
+      ],
       "description": [
         "Seville's 4th, with the cart path, tee boxes and green complex laid out in layered birch."
       ],
       "photos": [
-        ["IMG_2460.jpg", "Seville hole 4 plaque"]
+        [
+          "IMG_2460.jpg",
+          "Seville hole 4 plaque"
+        ]
       ]
     },
     {
@@ -113,13 +287,37 @@
       "title": "Seville Golf & Country Club Course Map",
       "category": "course",
       "location": "Gilbert, Arizona",
-      "specs": [["Holes", "18"], ["Par", "72"], ["Yards", "6,565"], ["Established", "2001"], ["Architect", "Gary Panks"]],
+      "specs": [
+        [
+          "Holes",
+          "18"
+        ],
+        [
+          "Par",
+          "72"
+        ],
+        [
+          "Yards",
+          "6,565"
+        ],
+        [
+          "Established",
+          "2001"
+        ],
+        [
+          "Architect",
+          "Gary Panks"
+        ]
+      ],
       "description": [
         "All 18 holes at Seville in layered wood, with water, bunkers and greens painted by hand.",
         "Includes a yardage scale, a compass rose and the course details along the bottom edge."
       ],
       "photos": [
-        ["IMG_1821.jpg", "Full 18-hole map of Seville Golf & Country Club"]
+        [
+          "IMG_1821.jpg",
+          "Full 18-hole map of Seville Golf & Country Club"
+        ]
       ]
     },
     {
@@ -127,16 +325,45 @@
       "title": "Shinnecock Hills Course Map",
       "category": "course",
       "location": "Southampton, New York",
-      "specs": [["Holes", "18"], ["Par", "70"], ["Frames", "Walnut, white, black"], ["Styles", "Layered or line art"]],
+      "specs": [
+        [
+          "Holes",
+          "18"
+        ],
+        [
+          "Par",
+          "70"
+        ],
+        [
+          "Frames",
+          "Walnut, white, black"
+        ],
+        [
+          "Styles",
+          "Layered or line art"
+        ]
+      ],
       "description": [
         "The classic links at Shinnecock Hills, with the years it hosted the U.S. Open listed on the piece.",
         "Shown in walnut, white and black frames, plus a lighter line-art version."
       ],
       "photos": [
-        ["IMG_1767.jpg", "Shinnecock Hills course map in a walnut frame"],
-        ["IMG_1735.jpg", "Shinnecock Hills map on a shelf"],
-        ["IMG_1710.jpg", "Shinnecock Hills maps in three frame colors"],
-        ["IMG_1876.jpg", "Shinnecock Hills line-art and layered versions side by side"]
+        [
+          "IMG_1767.jpg",
+          "Shinnecock Hills course map in a walnut frame"
+        ],
+        [
+          "IMG_1735.jpg",
+          "Shinnecock Hills map on a shelf"
+        ],
+        [
+          "IMG_1710.jpg",
+          "Shinnecock Hills maps in three frame colors"
+        ],
+        [
+          "IMG_1876.jpg",
+          "Shinnecock Hills line-art and layered versions side by side"
+        ]
       ]
     },
     {
@@ -144,14 +371,41 @@
       "title": "Hammond Golf Club Course Map",
       "category": "course",
       "location": "Hammond, Wisconsin",
-      "specs": [["Holes", "9"], ["Par", "36"], ["Yards", "3,137"], ["Established", "1970"], ["Finishes", "Natural, white, grey"]],
+      "specs": [
+        [
+          "Holes",
+          "9"
+        ],
+        [
+          "Par",
+          "36"
+        ],
+        [
+          "Yards",
+          "3,137"
+        ],
+        [
+          "Established",
+          "1970"
+        ],
+        [
+          "Finishes",
+          "Natural, white, grey"
+        ]
+      ],
       "description": [
         "A nine-hole map of Hammond Golf Club with raised green fairways floating on the board.",
         "Offered in three finishes: natural birch, white and grey."
       ],
       "photos": [
-        ["IMG_2061.jpg", "Hammond Golf Club course map in white"],
-        ["IMG_2058.jpg", "Hammond Golf Club maps in natural, white and grey finishes"]
+        [
+          "IMG_2061.jpg",
+          "Hammond Golf Club course map in white"
+        ],
+        [
+          "IMG_2058.jpg",
+          "Hammond Golf Club maps in natural, white and grey finishes"
+        ]
       ]
     },
     {
@@ -159,12 +413,24 @@
       "title": "Sunbird Golf Club Course Map",
       "category": "course",
       "location": "Arizona",
-      "specs": [["Styles", "Two finishes"], ["Includes", "Surrounding streets"]],
+      "specs": [
+        [
+          "Styles",
+          "Two finishes"
+        ],
+        [
+          "Includes",
+          "Surrounding streets"
+        ]
+      ],
       "description": [
         "A full map of Sunbird Golf Club with the neighborhood streets around it, shown in two finishes."
       ],
       "photos": [
-        ["IMG_1820.jpg", "Two Sunbird Golf Club maps side by side"]
+        [
+          "IMG_1820.jpg",
+          "Two Sunbird Golf Club maps side by side"
+        ]
       ]
     },
     {
@@ -172,14 +438,33 @@
       "title": "Gilbert, Arizona Street Map",
       "category": "city",
       "location": "Gilbert, Arizona",
-      "specs": [["Style", "Black & white"], ["Sizes", "Two"], ["Includes", "Coordinates and water tower"]],
+      "specs": [
+        [
+          "Style",
+          "Black & white"
+        ],
+        [
+          "Sizes",
+          "Two"
+        ],
+        [
+          "Includes",
+          "Coordinates and water tower"
+        ]
+      ],
       "description": [
         "Gilbert's street grid in crisp black and white, finished with the town's coordinates and its water tower.",
         "Made in two sizes, for a desk or for the wall."
       ],
       "photos": [
-        ["gilbert-desk.jpg", "Gilbert, Arizona street map on a desk"],
-        ["IMG_1959.jpg", "Gilbert, Arizona street maps in two sizes"]
+        [
+          "gilbert-desk.jpg",
+          "Gilbert, Arizona street map on a desk"
+        ],
+        [
+          "IMG_1959.jpg",
+          "Gilbert, Arizona street maps in two sizes"
+        ]
       ]
     },
     {
@@ -187,12 +472,20 @@
       "title": "Neenah, Wisconsin Map",
       "category": "city",
       "location": "Neenah, Wisconsin",
-      "specs": [["Style", "Layered wood, stained water"]],
+      "specs": [
+        [
+          "Style",
+          "Layered wood, stained water"
+        ]
+      ],
       "description": [
         "Neenah's streets and lakeshore in layered wood, with the water stained deep blue."
       ],
       "photos": [
-        ["IMG_2070.jpg", "Neenah, Wisconsin layered wood map"]
+        [
+          "IMG_2070.jpg",
+          "Neenah, Wisconsin layered wood map"
+        ]
       ]
     },
     {
@@ -200,12 +493,20 @@
       "title": "Santa Cruz, California Map",
       "category": "city",
       "location": "Santa Cruz, California",
-      "specs": [["Style", "Layered wood, graded ocean depths"]],
+      "specs": [
+        [
+          "Style",
+          "Layered wood, graded ocean depths"
+        ]
+      ],
       "description": [
         "The Santa Cruz coastline with the hills in stained layers and the ocean stepping down through shades of blue."
       ],
       "photos": [
-        ["IMG_2539.jpg", "Santa Cruz, California layered coastline map"]
+        [
+          "IMG_2539.jpg",
+          "Santa Cruz, California layered coastline map"
+        ]
       ]
     },
     {
@@ -213,12 +514,20 @@
       "title": "Pleasure Point, California Map",
       "category": "city",
       "location": "Pleasure Point, California",
-      "specs": [["Style", "Natural birch with inset detail"]],
+      "specs": [
+        [
+          "Style",
+          "Natural birch with inset detail"
+        ]
+      ],
       "description": [
         "Pleasure Point's streets and shoreline in natural birch, with an inset panel that zooms in on the point."
       ],
       "photos": [
-        ["IMG_2655.jpg", "Pleasure Point, California map with inset"]
+        [
+          "IMG_2655.jpg",
+          "Pleasure Point, California map with inset"
+        ]
       ]
     },
     {
@@ -226,12 +535,24 @@
       "title": "Arizona Counties Map",
       "category": "city",
       "location": "Arizona",
-      "specs": [["Counties", "15"], ["Style", "Stained birch, large format"]],
+      "specs": [
+        [
+          "Counties",
+          "15"
+        ],
+        [
+          "Style",
+          "Stained birch, large format"
+        ]
+      ],
       "description": [
         "All 15 Arizona counties cut as separate pieces and stained in different wood tones, on a black board."
       ],
       "photos": [
-        ["IMG_2327.jpg", "Arizona counties map in stained wood"]
+        [
+          "IMG_2327.jpg",
+          "Arizona counties map in stained wood"
+        ]
       ]
     }
   ]

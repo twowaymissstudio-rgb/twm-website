@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>TWM Site Editor</title>
+<style>
+/* Layout: two-pane workbench. Listing index on the left, the selected listing's form on the right, sticky save bar on top. */
+:root{
+  --paper:#F3EEE2;--board:#FBF8F1;--ink:#1D2A22;--muted:#5F6B5F;--green:#24493A;--line:#D8CFBC;--warn:#A3412A;--ok:#2F6B45;
+  --display:"Cormorant Garamond",Georgia,serif;--body:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;--mono:ui-monospace,Menlo,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root{--paper:#111813;--board:#18211B;--ink:#ECE5D4;--muted:#A7AE9F;--green:#8FC2A3;--line:#2E3A31;--warn:#E8866C;--ok:#8FC2A3;color-scheme:dark}}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:14px/1.5 var(--body)}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+.bar{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 20px;background:var(--board);border-bottom:1px solid var(--line)}
+.bar h1{font:600 20px/1 var(--display);margin:0 auto 0 0;letter-spacing:.01em}
+.bar h1 small{font:500 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-left:10px}
+.btn{padding:8px 14px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);font-weight:600}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.danger{background:transparent;border-color:var(--warn);color:var(--warn)}
+.btn:disabled{opacity:.4;cursor:default}
+.status{font:12px/1.3 var(--mono);color:var(--muted)}
+.status.dirty{color:var(--warn)} .status.saved{color:var(--ok)}
+:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+
+.welcome{max-width:560px;margin:10vh auto;padding:0 20px}
+.welcome h2{font:600 40px/1.05 var(--display);margin:0 0 12px}
+.welcome p{color:var(--muted)}
+.welcome code{font:12px var(--mono);background:var(--board);padding:2px 5px;border:1px solid var(--line)}
+
+.app{display:grid;grid-template-columns:300px minmax(0,1fr);min-height:calc(100% - 58px)}
+aside{border-right:1px solid var(--line);background:var(--board);padding:12px;display:flex;flex-direction:column;gap:6px;overflow-y:auto;max-height:calc(100vh - 58px);position:sticky;top:58px}
+aside .group{font:500 10px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:12px 4px 4px}
+.item{display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:10px;align-items:center;padding:6px;border:1px solid transparent;background:transparent;text-align:left;width:100%}
+.item:hover{border-color:var(--line)}
+.item[aria-current="true"]{border-color:var(--ink);background:var(--paper)}
+.item img,.item .noimg{width:44px;height:44px;object-fit:cover;background:var(--line);display:block}
+.item b{display:block;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.item span{font:11px var(--mono);color:var(--muted)}
+.item .ord{display:flex;flex-direction:column}
+.item .ord button{border:0;background:none;color:var(--muted);padding:0 4px;font-size:12px;line-height:1.2}
+.item .ord button:hover{color:var(--ink)}
+
+main{padding:24px clamp(16px,3vw,40px) 80px;max-width:1000px}
+.head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.head h2{font:600 34px/1.05 var(--display);margin:0}
+.head a{font:12px var(--mono);color:var(--muted)}
+fieldset{border:1px solid var(--line);background:var(--board);padding:16px 18px 18px;margin:0 0 18px}
+legend{font:500 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding:0 6px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+label{display:grid;gap:5px;font-size:12px;color:var(--muted);min-width:0}
+label .hint{font-size:11px}
+input,select,textarea{width:100%;padding:8px 10px;border:1px solid var(--line);background:var(--paper);color:var(--ink)}
+textarea{min-height:130px;resize:vertical;line-height:1.5}
+.full{grid-column:1/-1}
+.specrow{display:grid;grid-template-columns:180px minmax(0,1fr) 32px;gap:8px;margin-bottom:8px}
+.x{border:1px solid var(--line);background:var(--paper);color:var(--muted);width:32px}
+.x:hover{color:var(--warn);border-color:var(--warn)}
+.small{padding:6px 10px;border:1px dashed var(--line);background:transparent;color:var(--muted)}
+.small:hover{color:var(--ink);border-color:var(--ink)}
+
+.photos{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:14px}
+.ph{border:1px solid var(--line);background:var(--paper);display:flex;flex-direction:column}
+.ph .img{position:relative;aspect-ratio:5/4;background:var(--line)}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.ph .badge{position:absolute;left:6px;top:6px;font:500 10px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:4px 6px}
+.ph .new{position:absolute;right:6px;top:6px;font:500 10px/1 var(--mono);background:var(--ok);color:#fff;padding:4px 6px}
+.ph .tools{display:flex;gap:4px;padding:6px}
+.ph .tools button{flex:1;border:1px solid var(--line);background:var(--board);padding:4px 0;font-size:12px}
+.ph .tools button:hover{border-color:var(--ink)}
+.ph .tools button.rm:hover{border-color:var(--warn);color:var(--warn)}
+.ph input{border:0;border-top:1px solid var(--line);font-size:12px;padding:6px 8px;background:var(--board)}
+.drop{display:grid;place-items:center;text-align:center;aspect-ratio:auto;min-height:150px;border:2px dashed var(--line);color:var(--muted);padding:12px;cursor:pointer;background:transparent}
+.drop.over{border-color:var(--green);color:var(--green)}
+.err{color:var(--warn);font-size:12px;margin-top:6px}
+.dangerzone{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.toast{position:fixed;right:20px;bottom:20px;background:var(--ink);color:var(--paper);padding:10px 14px;font-size:13px;max-width:420px;z-index:9}
+@media (max-width:820px){.app{grid-template-columns:1fr}aside{position:static;max-height:none}.grid2{grid-template-columns:1fr}.specrow{grid-template-columns:1fr 1fr 32px}}
+</style>
+</head>
+<body>
+<div class="bar">
+  <h1>Two Way Miss <small>Site editor</small></h1>
+  <span class="status" id="status">No folder open</span>
+  <button class="btn ghost" id="openBtn">Open site folder</button>
+  <button class="btn" id="saveBtn" disabled>Save changes</button>
+</div>
+
+<div class="welcome" id="welcome">
+  <h2>Edit the website</h2>
+  <p>Click <b>Open site folder</b> and choose your <code>twm-website</code> repository folder on the 4GB External drive. Chrome will ask to let this page view and save files there. Click <b>Allow</b> both times.</p>
+  <p>Edit listings and add, remove or reorder photos, then click <b>Save changes</b>. In GitHub Desktop, commit and click <b>Push origin</b>. GitHub rebuilds the site, and it goes live a minute or two later.</p>
+  <p id="needChrome" class="err" hidden>This browser can't save into folders. Open this page in Chrome or Edge.</p>
+</div>
+
+<div class="app" id="app" hidden>
+  <aside id="list"></aside>
+  <main id="main"></main>
+</div>
+
+<input type="file" id="fileIn" accept="image/jpeg,image/png,image/webp" multiple hidden>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+const $ = (s, r = document) => r.querySelector(s);
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const slugify = (s) => String(s).toLowerCase().normalize("NFKD").replace(/[̀-ͯ]/g, "")
+  .replace(/#/g, "").replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60);
+
+let root = null;          // FileSystemDirectoryHandle for the repo
+let data = null;          // parsed listings.json
+let sel = 0;              // selected listing index, or "delivered"
+let dirty = false;
+const pending = new Map(); // filename -> {big: Blob, small: Blob, url}
+const toDelete = new Set(); // filenames removed this session
+const urlCache = new Map(); // filename -> object URL for thumbnails
+
+if (!window.showDirectoryPicker) $("#needChrome").hidden = false;
+
+function toast(msg, ms = 3500) {
+  const t = $("#toast"); t.textContent = msg; t.hidden = false;
+  clearTimeout(toast._t); toast._t = setTimeout(() => (t.hidden = true), ms);
+}
+function setDirty(v = true) {
+  dirty = v;
+  const s = $("#status");
+  s.textContent = v ? "Unsaved changes" : "All changes saved";
+  s.className = "status " + (v ? "dirty" : "saved");
+  $("#saveBtn").disabled = !v;
+}
+window.addEventListener("beforeunload", (e) => { if (dirty) { e.preventDefault(); e.returnValue = ""; } });
+
+/* ---------- folder access ---------- */
+const idb = () => new Promise((res, rej) => {
+  const r = indexedDB.open("twm-editor", 1);
+  r.onupgradeneeded = () => r.result.createObjectStore("kv");
+  r.onsuccess = () => res(r.result); r.onerror = () => rej(r.error);
+});
+async function kv(key, val) {
+  try {
+    const db = await idb();
+    return await new Promise((res) => {
+      const tx = db.transaction("kv", val === undefined ? "readonly" : "readwrite");
+      const st = tx.objectStore("kv");
+      const r = val === undefined ? st.get(key) : st.put(val, key);
+      r.onsuccess = () => res(r.result); r.onerror = () => res(null);
+    });
+  } catch { return null; }
+}
+
+$("#openBtn").onclick = async () => {
+  if (dirty && !confirm("You have unsaved changes. Open a folder anyway and lose them?")) return;
+  try {
+    let h = root ? null : await kv("root"); // first click reopens the last folder
+    if (!(h && (await h.requestPermission({ mode: "readwrite" })) === "granted")) {
+      h = await showDirectoryPicker({ id: "twm-site", mode: "readwrite" });
+    }
+    await openFolder(h);
+    kv("root", h);
+  } catch (e) {
+    if (e.name !== "AbortError") toast("Couldn't open the folder: " + e.message, 6000);
+  }
+};
+
+async function openFolder(h) {
+  let fh;
+  try { fh = await h.getFileHandle("listings.json"); }
+  catch { toast("That folder has no listings.json. Choose the twm-website folder.", 6000); return; }
+  if ((await h.queryPermission?.({ mode: "readwrite" })) === "prompt") await h.requestPermission({ mode: "readwrite" });
+  root = h;
+  data = JSON.parse(await (await fh.getFile()).text());
+  data.delivered ??= [];
+  pending.clear(); toDelete.clear();
+  urlCache.forEach((u) => URL.revokeObjectURL(u)); urlCache.clear();
+  sel = 0;
+  $("#welcome").hidden = true; $("#app").hidden = false;
+  $("#openBtn").textContent = "Open another folder";
+  setDirty(false);
+  $("#status").textContent = `Opened ${h.name} · ${data.listings.length} listings`;
+  render();
+}
+window.openFolder = openFolder; // used for testing
+
+async function dirHandle(path, create = false) {
+  let d = root;
+  for (const part of path.split("/").filter(Boolean)) d = await d.getDirectoryHandle(part, { create });
+  return d;
+}
+async function thumbURL(f) {
+  if (pending.has(f)) return pending.get(f).url;
+  if (urlCache.has(f)) return urlCache.get(f);
+  for (const dir of ["img/t", "img"]) {
+    try {
+      const file = await (await (await dirHandle(dir)).getFileHandle(f)).getFile();
+      const u = URL.createObjectURL(file); urlCache.set(f, u); return u;
+    } catch {}
+  }
+  return "";
+}
+async function fileExists(dir, name) {
+  try { await (await dirHandle(dir)).getFileHandle(name); return true; } catch { return false; }
+}
+
+/* ---------- image processing ---------- */
+async function resize(file, max, q) {
+  const bmp = await createImageBitmap(file, { imageOrientation: "from-image" });
+  const s = Math.min(1, max / Math.max(bmp.width, bmp.height));
+  const c = document.createElement("canvas");
+  c.width = Math.round(bmp.width * s); c.height = Math.round(bmp.height * s);
+  const g = c.getContext("2d"); g.imageSmoothingQuality = "high";
+  g.drawImage(bmp, 0, 0, c.width, c.height);
+  bmp.close?.();
+  return await new Promise((r) => c.toBlob(r, "image/jpeg", q));
+}
+async function addFiles(files, target) {
+  const list = [...files];
+  const bad = list.filter((f) => !/^image\/(jpeg|png|webp)$/.test(f.type));
+  if (bad.length) toast(`Skipped ${bad.map((f) => f.name).join(", ")}. Use JPEG or PNG. To convert an iPhone HEIC photo, open it in Preview and choose File › Export › JPEG.`, 9000);
+  const base = target === "delivered" ? "customer" : (data.listings[sel].slug || "photo");
+  let n = 0;
+  for (const f of list.filter((f) => !bad.includes(f))) {
+    try {
+      let name;
+      do { name = `${base}-${Date.now().toString(36)}${n++ ? "-" + n : ""}.jpg`; }
+      while (pending.has(name) || (await fileExists("img", name)));
+      const big = await resize(f, 1600, 0.82);
+      const small = await resize(f, 800, 0.78);
+      pending.set(name, { big, small, url: URL.createObjectURL(small) });
+      toDelete.delete(name);
+      const alt = target === "delivered" ? "Customer holding a finished piece" : (data.listings[sel].title || "Photo");
+      (target === "delivered" ? data.delivered : data.listings[sel].photos).push([name, alt]);
+    } catch (e) { toast(`Couldn't read ${f.name}: ${e.message}`, 6000); }
+  }
+  setDirty(); render();
+}
+
+/* ---------- validation & save ---------- */
+function problems() {
+  const out = [], seen = new Set();
+  data.listings.forEach((l, i) => {
+    const name = l.title || `Listing ${i + 1}`;
+    if (!l.title.trim()) out.push(`${name}: add a title.`);
+    if (!/^[a-z0-9-]+$/.test(l.slug)) out.push(`${name}: the web address can only use lowercase letters, numbers and dashes.`);
+    if (seen.has(l.slug)) out.push(`${name}: another listing already uses the web address "${l.slug}".`);
+    seen.add(l.slug);
+    if (!l.photos.length) out.push(`${name}: add at least one photo.`);
+    if (l.etsy && !/^https:\/\//.test(l.etsy)) out.push(`${name}: the Etsy link should start with https://`);
+  });
+  return out;
+}
+function usedFiles() {
+  const s = new Set();
+  data.listings.forEach((l) => l.photos.forEach(([f]) => s.add(f)));
+  data.delivered.forEach(([f]) => s.add(f));
+  const h = data.home || {};
+  [h.hero, h.city_cover, ...(h.process || []).map((x) => x[0])].forEach((f) => f && s.add(f));
+  return s;
+}
+async function save() {
+  const errs = problems();
+  if (errs.length) { toast("Can't save yet. " + errs.join(" "), 9000); return; }
+  $("#saveBtn").disabled = true; $("#status").textContent = "Saving…";
+  try {
+    const used = usedFiles();
+    const img = await dirHandle("img", true), t = await dirHandle("img/t", true);
+    const write = async (dir, name, blob) => {
+      const w = await (await dir.getFileHandle(name, { create: true })).createWritable();
+      await w.write(blob); await w.close();
+    };
+    for (const [name, p] of pending) if (used.has(name)) { await write(img, name, p.big); await write(t, name, p.small); }
+    for (const name of toDelete) if (!used.has(name)) {
+      for (const d of [img, t]) { try { await d.removeEntry(name); } catch {} }
+    }
+    // tidy listings
+    data.listings.forEach((l) => {
+      l.specs = l.specs.filter(([k, v]) => k.trim() || v.trim());
+      l.description = l.description.map((p) => p.trim()).filter(Boolean);
+      if (!l.etsy) delete l.etsy;
+    });
+    const ordered = { site: data.site, categories: data.categories, home: data.home, delivered: data.delivered, listings: data.listings };
+    const json = JSON.stringify(ordered, (k, v) => (k === "_new" ? undefined : v), 2) + "\n";
+    await write(root, "listings.json", new Blob([json], { type: "application/json" }));
+    pending.forEach((p, name) => urlCache.set(name, p.url));
+    pending.clear(); toDelete.clear();
+    setDirty(false);
+    toast("Saved. Now commit and click Push origin in GitHub Desktop.", 6000);
+  } catch (e) {
+    $("#saveBtn").disabled = false; $("#status").textContent = "Save failed";
+    toast("Save failed: " + e.message, 8000);
+  }
+}
+$("#saveBtn").onclick = save;
+document.addEventListener("keydown", (e) => {
+  if ((e.metaKey || e.ctrlKey) && e.key === "s") { e.preventDefault(); if (dirty) save(); }
+});
+
+/* ---------- rendering ---------- */
+function render() { renderList(); renderMain(); }
+
+async function renderList() {
+  const cats = data.categories;
+  const L = data.listings;
+  let h = `<button class="btn" id="newBtn" style="margin-bottom:6px">+ New listing</button>`;
+  h += `<div class="group">Home page</div>
+    <button class="item" data-sel="delivered" aria-current="${sel === "delivered"}"><img data-thumb="${esc(data.delivered[0]?.[0] || "")}" alt=""><div><b>Customer photos</b><span>${data.delivered.length} photos</span></div><span></span></button>`;
+  h += `<div class="group">Listings, in the order shown on the site</div>`;
+  L.forEach((l, i) => {
+    h += `<div class="item" role="button" tabindex="0" data-sel="${i}" aria-current="${sel === i}">
+      <img data-thumb="${esc(l.photos[0]?.[0] || "")}" alt="">
+      <div><b>${esc(l.title || "Untitled listing")}</b><span>${esc(cats[l.category] || l.category)} · ${l.photos.length} photo${l.photos.length === 1 ? "" : "s"}</span></div>
+      <span class="ord"><button data-mv="${i}" data-d="-1" aria-label="Move up" ${i === 0 ? "disabled" : ""}>▲</button><button data-mv="${i}" data-d="1" aria-label="Move down" ${i === L.length - 1 ? "disabled" : ""}>▼</button></span>
+    </div>`;
+  });
+  const list = $("#list"); list.innerHTML = h;
+  list.querySelectorAll("img[data-thumb]").forEach(async (im) => { if (im.dataset.thumb) im.src = await thumbURL(im.dataset.thumb); });
+  list.querySelectorAll("[data-sel]").forEach((el) => {
+    const go = () => { sel = el.dataset.sel === "delivered" ? "delivered" : +el.dataset.sel; render(); };
+    el.addEventListener("click", (e) => { if (!e.target.closest("[data-mv]")) go(); });
+    el.addEventListener("keydown", (e) => { if (e.key === "Enter") go(); });
+  });
+  list.querySelectorAll("[data-mv]").forEach((b) => (b.onclick = (e) => {
+    e.stopPropagation();
+    const i = +b.dataset.mv, j = i + +b.dataset.d;
+    [L[i], L[j]] = [L[j], L[i]];
+    if (sel === i) sel = j; else if (sel === j) sel = i;
+    setDirty(); render();
+  }));
+  $("#newBtn").onclick = () => {
+    const base = "new-listing"; let slug = base, k = 2;
+    while (L.some((l) => l.slug === slug)) slug = `${base}-${k++}`;
+    L.unshift({ slug, title: "", category: "ace", location: "", specs: [["Hole", ""], ["Par", ""], ["Yards", ""]], description: [""], photos: [], _new: true });
+    sel = 0; setDirty(); render();
+    setTimeout(() => $("#f-title")?.focus(), 0);
+  };
+}
+
+function photoCards(arr, opts) {
+  return arr.map(([f, alt], i) => `
+    <div class="ph" data-i="${i}">
+      <div class="img"><img data-thumb="${esc(f)}" alt="">${i === 0 && opts.cover ? '<span class="badge">Cover</span>' : ""}${pending.has(f) ? '<span class="new">New</span>' : ""}</div>
+      <div class="tools">
+        <button data-act="left" title="Move left" ${i === 0 ? "disabled" : ""}>←</button>
+        ${opts.cover ? `<button data-act="cover" title="Make this the cover photo" ${i === 0 ? "disabled" : ""}>Cover</button>` : ""}
+        <button data-act="right" title="Move right" ${i === arr.length - 1 ? "disabled" : ""}>→</button>
+        <button data-act="rm" class="rm" title="Remove photo">✕</button>
+      </div>
+      <input data-alt="${i}" value="${esc(alt)}" placeholder="Describe the photo" aria-label="Photo description">
+    </div>`).join("") + `<button class="drop" id="drop" type="button">Drop photos here<br>or click to choose<br><small>JPEG or PNG · resized automatically</small></button>`;
+}
+function wirePhotos(arr, target) {
+  const box = $("#photos");
+  box.querySelectorAll("img[data-thumb]").forEach(async (im) => (im.src = await thumbURL(im.dataset.thumb)));
+  box.querySelectorAll(".ph").forEach((card) => {
+    const i = +card.dataset.i;
+    card.querySelectorAll("[data-act]").forEach((b) => (b.onclick = () => {
+      const a = b.dataset.act;
+      if (a === "left") [arr[i - 1], arr[i]] = [arr[i], arr[i - 1]];
+      if (a === "right") [arr[i + 1], arr[i]] = [arr[i], arr[i + 1]];
+      if (a === "cover") arr.unshift(arr.splice(i, 1)[0]);
+      if (a === "rm") {
+        const [f] = arr.splice(i, 1)[0];
+        if (pending.has(f) && !usedFiles().has(f)) pending.delete(f); else toDelete.add(f);
+      }
+      setDirty(); render();
+    }));
+  });
+  box.querySelectorAll("[data-alt]").forEach((inp) => (inp.oninput = () => { arr[+inp.dataset.alt][1] = inp.value; setDirty(); }));
+  const drop = $("#drop");
+  drop.onclick = () => { fileIn.dataset.target = target; fileIn.click(); };
+  drop.ondragover = (e) => { e.preventDefault(); drop.classList.add("over"); };
+  drop.ondragleave = () => drop.classList.remove("over");
+  drop.ondrop = (e) => { e.preventDefault(); drop.classList.remove("over"); addFiles(e.dataTransfer.files, target); };
+}
+const fileIn = $("#fileIn");
+fileIn.onchange = () => { addFiles(fileIn.files, fileIn.dataset.target); fileIn.value = ""; };
+
+function renderMain() {
+  const m = $("#main");
+  if (sel === "delivered") {
+    m.innerHTML = `<div class="head"><h2>Customer photos</h2></div>
+      <p style="color:var(--muted);margin-top:-8px">These four photos appear in the "In good hands" section on the home page. Four photos fill the row best.</p>
+      <fieldset><legend>Photos</legend><div class="photos" id="photos">${photoCards(data.delivered, { cover: false })}</div></fieldset>`;
+    wirePhotos(data.delivered, "delivered");
+    return;
+  }
+  const l = data.listings[sel];
+  if (!l) { m.innerHTML = `<p>Select a listing.</p>`; return; }
+  const live = data.site.base_url + "listing/" + l.slug + "/";
+  const cats = Object.entries(data.categories).map(([k, v]) => `<option value="${k}" ${l.category === k ? "selected" : ""}>${esc(v)}</option>`).join("");
+  m.innerHTML = `
+    <div class="head">
+      <div><h2>${esc(l.title || "New listing")}</h2>${l._new ? "" : `<a href="${esc(live)}" target="_blank" rel="noopener">View the live page ↗</a>`}</div>
+    </div>
+    <fieldset><legend>Details</legend><div class="grid2">
+      <label class="full" for="f-title">Title<input id="f-title" value="${esc(l.title)}" placeholder="Papago #12 Hole-in-One Plaque"></label>
+      <label for="f-cat">Category<select id="f-cat">${cats}</select></label>
+      <label for="f-loc">Location<input id="f-loc" value="${esc(l.location)}" placeholder="Papago Golf Course · Phoenix, Arizona"></label>
+      <label for="f-slug">Web address<input id="f-slug" value="${esc(l.slug)}"><span class="hint">…/listing/<b id="slugShow">${esc(l.slug)}</b>/ ${l._new ? "· fills in from the title" : "· changing this breaks old links"}</span></label>
+      <label for="f-etsy">Etsy listing link (optional)<input id="f-etsy" value="${esc(l.etsy || "")}" placeholder="https://www.etsy.com/listing/…"><span class="hint">Leave empty to link to the shop.</span></label>
+    </div></fieldset>
+
+    <fieldset><legend>Photos · the first is the cover, the second shows on hover</legend>
+      <div class="photos" id="photos">${photoCards(l.photos, { cover: true })}</div>
+    </fieldset>
+
+    <fieldset><legend>Details table</legend>
+      <div id="specs">${l.specs.map(([k, v], i) => `<div class="specrow"><input data-sk="${i}" value="${esc(k)}" placeholder="Label, e.g. Yards" aria-label="Label"><input data-sv="${i}" value="${esc(v)}" placeholder="Value, e.g. 147" aria-label="Value"><button class="x" data-srm="${i}" aria-label="Remove row">✕</button></div>`).join("")}</div>
+      <button class="small" id="addSpec" type="button">+ Add row</button>
+    </fieldset>
+
+    <fieldset><legend>Description</legend>
+      <label for="f-desc">Leave a blank line between paragraphs.<textarea id="f-desc">${esc(l.description.join("\n\n"))}</textarea></label>
+    </fieldset>
+
+    <fieldset><legend>Delete</legend><div class="dangerzone">
+      <span style="color:var(--muted)">Removes this listing and its photos from the site when you save.</span>
+      <button class="btn danger" id="delBtn" type="button">Delete listing</button>
+    </div></fieldset>`;
+
+  const on = (id, fn) => ($("#" + id).oninput = (e) => { fn(e.target.value); setDirty(); });
+  on("f-title", (v) => {
+    l.title = v; $(".head h2").textContent = v || "New listing";
+    if (l._new) { l.slug = slugify(v) || "new-listing"; $("#f-slug").value = l.slug; $("#slugShow").textContent = l.slug; }
+    renderList();
+  });
+  on("f-loc", (v) => (l.location = v));
+  on("f-etsy", (v) => (l.etsy = v.trim()));
+  on("f-slug", (v) => { l.slug = slugify(v); l._new = false; $("#slugShow").textContent = l.slug; });
+  $("#f-slug").onblur = (e) => (e.target.value = l.slug);
+  $("#f-cat").onchange = (e) => { l.category = e.target.value; setDirty(); renderList(); };
+  on("f-desc", (v) => (l.description = v.split(/\n\s*\n/)));
+  m.querySelectorAll("[data-sk]").forEach((i) => (i.oninput = () => { l.specs[+i.dataset.sk][0] = i.value; setDirty(); }));
+  m.querySelectorAll("[data-sv]").forEach((i) => (i.oninput = () => { l.specs[+i.dataset.sv][1] = i.value; setDirty(); }));
+  m.querySelectorAll("[data-srm]").forEach((b) => (b.onclick = () => { l.specs.splice(+b.dataset.srm, 1); setDirty(); renderMain(); }));
+  $("#addSpec").onclick = () => { l.specs.push(["", ""]); setDirty(); renderMain(); };
+  $("#delBtn").onclick = () => {
+    if (!confirm(`Delete "${l.title || "this listing"}"? It disappears from the site when you save and push.`)) return;
+    const [gone] = data.listings.splice(sel, 1);
+    gone.photos.forEach(([f]) => { if (pending.has(f)) pending.delete(f); else toDelete.add(f); });
+    sel = Math.max(0, Math.min(sel, data.listings.length - 1));
+    setDirty(); render();
+  };
+  wirePhotos(l.photos, "listing");
+}
+
+</script>
+</body>
+</html>
