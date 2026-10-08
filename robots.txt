@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://twowaymissstudio-rgb.github.io/twm-website/sitemap.xml
