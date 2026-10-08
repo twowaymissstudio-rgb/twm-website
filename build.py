@@ -197,7 +197,7 @@ def build_index():
   <div class="steps">
     <div class="step"><span class="n">STEP 1</span><h3>Map the ground</h3><p>Fairways, greens, bunkers, water and cart paths are traced from OpenStreetMap data, so every shape matches the real course.</p></div>
     <div class="step"><span class="n">STEP 2</span><h3>Draw the piece</h3><p>The layout is redrawn in Illustrator with hole badges, a yardage scale and lettering in the club's own style.</p></div>
-    <div class="step"><span class="n">STEP 3</span><h3>Cut & engrave</h3><p>Each layer is laser cut from Baltic birch. Bunkers get depth from graded engraving, and mowing lines are etched into the greens.</p></div>
+    <div class="step"><span class="n">STEP 3</span><h3>Cut & engrave</h3><p>Each layer is laser cut from wood. Bunkers get depth from graded engraving, and mowing lines are etched into the greens.</p></div>
     <div class="step"><span class="n">STEP 4</span><h3>Finish by hand</h3><p>Layers are stained, painted and sealed, then assembled with raised trees and framed for the wall or the desk.</p></div>
   </div>
   <div class="detail">{process}</div>
@@ -217,7 +217,7 @@ def build_index():
     <h2 style="font-size:clamp(34px,4.6vw,56px)">Made a hole-in-one?<br>Let's make it permanent.</h2>
     <ul>
       <li>Any course with mapped holes, anywhere in the world.</li>
-      <li>Natural birch, white or grey finishes.</li>
+      <li>Natural wood, white or grey finishes.</li>
       <li>Your name, date, yardage and club engraved on the piece.</li>
       <li>A proof to approve before anything is cut.</li>
     </ul>
