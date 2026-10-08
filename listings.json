@@ -11,8 +11,8 @@
     "city": "City & coast"
   },
   "home": {
-    "hero": "seville-17-ingarfield.jpg",
-    "hero_listing": "seville-17-hole-in-one",
+    "hero": "keller-15-hole-in-one-mv01975y.jpg",
+    "hero_listing": "keller-15-hole-in-one",
     "city_cover": "IMG_2539.jpg",
     "process": [
       [
@@ -22,6 +22,24 @@
       [
         "IMG_2058.jpg",
         "Hammond Golf Club map in three finishes: natural birch, white and grey"
+      ]
+    ],
+    "hero_specs": [
+      [
+        "Hole",
+        "#15"
+      ],
+      [
+        "Yards",
+        "145"
+      ],
+      [
+        "Club",
+        "4 iron"
+      ],
+      [
+        "Year",
+        "1988"
       ]
     ]
   },
@@ -128,7 +146,7 @@
       "photos": [
         [
           "keller-15-hole-in-one-mv01975y.jpg",
-          "Keller Golf Club #15 Hole-in-One"
+          "Layered wood hole-in-one plaque of Keller Golf Club hole 15, with a blue pond and raised trees"
         ],
         [
           "keller-15-hole-in-one-mv018o68-4.jpg",

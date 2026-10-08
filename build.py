@@ -124,6 +124,8 @@ def build_index():
     cover = lambda c, fallback: by_cat[c][0]["photos"][0][0] if by_cat[c] else fallback
     hero = next((l for l in LISTINGS if l["slug"] == HOME.get("hero_listing")), LISTINGS[0])
     hero_img = HOME.get("hero") or hero["photos"][0][0]
+    hero_alt = next((a for f, a in hero["photos"] if f == hero_img), hero["title"])
+    hero_score = "".join(f"<span>{e(k)}<b>{e(v)}</b></span>" for k, v in (HOME.get("hero_specs") or hero["specs"])[:4])
     city_cover = HOME.get("city_cover") or cover("city", "IMG_2539.jpg")
     process = "".join(f'<img src="img/t/{e(f)}" alt="{e(a)}" loading="lazy">' for f, a in HOME.get("process", []))
     filters = '<button data-f="all" aria-pressed="true">All</button>' + "".join(
@@ -143,9 +145,9 @@ def build_index():
     </div>
   </div>
   <a class="plaque" href="listing/{e(hero['slug'])}/" style="display:block;text-decoration:none;color:inherit">
-    <img src="img/{e(hero_img)}" alt="Layered wood hole-in-one plaque of Seville hole 17 with a blue water hazard around an island green">
+    <img src="img/{e(hero_img)}" alt="{e(hero_alt)}">
     <span class="scorecard">
-      <span>Hole<b>#17</b></span><span>Par<b>3</b></span><span>Yards<b>147</b></span><span>Club<b>7 iron</b></span>
+      {hero_score}
     </span>
   </a>
 </div>
