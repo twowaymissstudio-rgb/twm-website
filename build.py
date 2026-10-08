@@ -138,7 +138,7 @@ def build_index():
   <div>
     <p class="eyebrow">Layered wood maps · cut & engraved by hand</p>
     <h1>Your course, <em>cut in layers.</em></h1>
-    <p class="lede">Two Way Miss Studio turns the holes you play into layered wood art. Fairways, greens, bunkers and water are cut from Baltic birch, engraved, painted and assembled by hand. Each piece records the hole, the yardage and the day.</p>
+    <p class="lede">Two Way Miss Studio turns the holes you play into layered wood art. Fairways, greens, bunkers and water are cut from wood, engraved, painted and assembled by hand. Each piece records the hole, the yardage and the day.</p>
     <div class="ctas">
       <a class="btn" href="#shop">Browse the work</a>
       <a class="btn ghost" href="#commission">Start a custom map</a>
