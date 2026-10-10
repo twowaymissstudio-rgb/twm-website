@@ -576,27 +576,6 @@
       ]
     },
     {
-      "slug": "pleasure-point-california",
-      "title": "Pleasure Point, California Map",
-      "category": "city",
-      "location": "Pleasure Point, California",
-      "specs": [
-        [
-          "Style",
-          "Natural wood with inset detail"
-        ]
-      ],
-      "description": [
-        "Pleasure Point's streets and shoreline in natural wood, with an inset panel that zooms in on the point."
-      ],
-      "photos": [
-        [
-          "IMG_2655.jpg",
-          "Pleasure Point, California map with inset"
-        ]
-      ]
-    },
-    {
       "slug": "arizona-counties",
       "title": "Arizona Counties Map",
       "category": "city",
