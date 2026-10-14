@@ -167,6 +167,86 @@
       ]
     },
     {
+      "slug": "seville-4-hole-in-one",
+      "title": "Seville #4 Hole-in-One Plaque",
+      "category": "ace",
+      "location": "Seville Golf & Country Club · Gilbert, Arizona",
+      "specs": [
+        [
+          "Hole",
+          "#4"
+        ],
+        [
+          "Yards",
+          "110"
+        ],
+        [
+          "Club",
+          "9 iron"
+        ],
+        [
+          "Ace",
+          "December 31, 2023"
+        ]
+      ],
+      "description": [
+        "A hole-in-one plaque for Seville's 4th, with the green set in layered wood inside a deep teal pond, walnut trees and the cart path engraved across the board.",
+        "Engraved with the golfer's name, the hole, the yardage, the club and the date. This one marks an ace on the last day of 2023."
+      ],
+      "photos": [
+        [
+          "seville-4-hole-in-one.jpg",
+          "Seville Golf & Country Club hole 4 hole-in-one plaque, 110 yards with a 9 iron, December 31, 2023"
+        ],
+        [
+          "seville-4-mv7agek1.jpg",
+          "Seville hole 4 hole-in-one plaque in natural wood"
+        ]
+      ]
+    },
+    {
+      "slug": "seville-14-hole-in-one",
+      "title": "Seville #14 Hole-in-One Plaque",
+      "category": "ace",
+      "location": "Seville Golf & Country Club · Gilbert, Arizona",
+      "specs": [
+        [
+          "Hole",
+          "#14"
+        ],
+        [
+          "Yards",
+          "187"
+        ],
+        [
+          "Club",
+          "6 iron"
+        ],
+        [
+          "Ace",
+          "August 12, 2025"
+        ],
+        [
+          "Frames",
+          "White, black"
+        ]
+      ],
+      "description": [
+        "A hole-in-one plaque for Seville's par-3 14th, with layered wood fairway and green, a dark green border, raised trees and the cart path engraved along the top.",
+        "The actual ball sits on two wooden pegs between engraved plates for the hole details and the ace: the golfer's name, the date, the club and the yardage. Shown here in a white frame and a black frame."
+      ],
+      "photos": [
+        [
+          "seville-14-hole-in-one-white.jpg",
+          "Seville hole 14 hole-in-one plaque in a white frame with the ace ball mounted below the map"
+        ],
+        [
+          "seville-14-hole-in-one-black.jpg",
+          "Seville hole 14 hole-in-one plaque in a black frame, 187 yards with a 6 iron, August 12, 2025"
+        ]
+      ]
+    },
+    {
       "slug": "seville-16-17",
       "title": "Seville #16 & #17 Plaque",
       "category": "hole",
