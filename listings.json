@@ -64,247 +64,6 @@
   ],
   "listings": [
     {
-      "slug": "seville-17-hole-in-one",
-      "title": "Seville #17 Hole-in-One Plaque",
-      "category": "ace",
-      "location": "Seville Golf & Country Club · Gilbert, Arizona",
-      "specs": [
-        [
-          "Hole",
-          "#17"
-        ],
-        [
-          "Par",
-          "3"
-        ],
-        [
-          "Handicap",
-          "14"
-        ],
-        [
-          "Engraved with",
-          "Name, date, yards, club"
-        ]
-      ],
-      "description": [
-        "Seville's island-green par 3, built in layers of wood with a glossy blue water hazard and raised trees.",
-        "Each plaque is engraved with the golfer's name, the date of the ace, the yardage and the club. These photos show plaques made for several different aces, including one golfer who has holed it twice."
-      ],
-      "photos": [
-        [
-          "seville-17-ingarfield.jpg",
-          "Seville hole 17 hole-in-one plaque, 147 yards with a 7 iron"
-        ],
-        [
-          "IMG_2237.jpg",
-          "Seville hole 17 plaque, 132 yards with a gap wedge"
-        ],
-        [
-          "IMG_1686.jpg",
-          "Seville hole 17 plaque recording two holes-in-one, 2018 and 2020"
-        ],
-        [
-          "IMG_2077.jpg",
-          "Close-up of the raised trees, water and engraved green"
-        ],
-        [
-          "IMG_2338.jpg",
-          "A golfer holding his finished plaque at the clubhouse"
-        ],
-        [
-          "IMG_2238.jpg",
-          "A golfer holding his finished plaque on the course"
-        ]
-      ]
-    },
-    {
-      "slug": "keller-15-hole-in-one",
-      "title": "Keller Golf Club #15 Hole-in-One",
-      "category": "ace",
-      "location": "Keller Golf Club · Maplewood, Minnesota",
-      "specs": [
-        [
-          "Hole",
-          "#15"
-        ],
-        [
-          "Yards",
-          "145"
-        ],
-        [
-          "Club",
-          "4 iron"
-        ],
-        [
-          "Ace",
-          "August 11, 1988"
-        ]
-      ],
-      "description": [
-        "A layered hole-in-one plaque for Keller's 15th, with a deep blue pond, mowing lines on the green and hand-placed trees.",
-        "Proof that an ace never gets old. This one went in on August 11, 1988. Any hole at any course can be made the same way, however long ago it happened."
-      ],
-      "photos": [
-        [
-          "keller-15-cover.jpg",
-          "Layered wood hole-in-one plaque of Keller Golf Club hole 15 in a walnut frame, with a blue pond and raised trees"
-        ],
-        [
-          "keller-15-hole-in-one-mv018o68-4.jpg",
-          "Keller Golf Club #15 Hole-in-One"
-        ],
-        [
-          "keller-15-hole-in-one-mv018nvf.jpg",
-          "Keller Golf Club #15 Hole-in-One"
-        ],
-        [
-          "keller-15-hole-in-one-mv018o1t-2.jpg",
-          "Keller Golf Club #15 Hole-in-One"
-        ],
-        [
-          "keller-15-hole-in-one-mv018o44-3.jpg",
-          "Keller Golf Club #15 Hole-in-One"
-        ]
-      ]
-    },
-    {
-      "slug": "santa-cruz-california",
-      "title": "Santa Cruz, California Map",
-      "category": "city",
-      "location": "Santa Cruz, California",
-      "specs": [
-        [
-          "Style",
-          "Layered wood, graded ocean depths"
-        ]
-      ],
-      "description": [
-        "The Santa Cruz coastline with the hills in stained layers and the ocean stepping down through shades of blue."
-      ],
-      "photos": [
-        [
-          "santa-cruz-california-mv7f6fo6.jpg",
-          "Santa Cruz - Map 1"
-        ],
-        [
-          "santa-cruz-california-mv7f7ok0.jpg",
-          "Santa Cruz Map 2"
-        ],
-        [
-          "santa-cruz-california-mv7f7sej.jpg",
-          "Santa Cruz Map 3"
-        ],
-        [
-          "santa-cruz-california-mv7f7kty.jpg",
-          "Santa Cruz, California Map"
-        ],
-        [
-          "santa-cruz-california-mv7fddb8.jpg",
-          "Santa Cruz Map 1 OG"
-        ],
-        [
-          "santa-cruz-california-mv7fizj5.jpg",
-          "Santa Cruz Map 4.5"
-        ]
-      ]
-    },
-    {
-      "slug": "seville-14-hole-in-one",
-      "title": "Seville #14 Hole-in-One Plaque",
-      "category": "ace",
-      "location": "Seville Golf & Country Club · Gilbert, Arizona",
-      "specs": [
-        [
-          "Hole",
-          "#14"
-        ],
-        [
-          "Yards",
-          "187"
-        ],
-        [
-          "Club",
-          "6 iron"
-        ],
-        [
-          "Ace",
-          "August 12, 2025"
-        ],
-        [
-          "Frames",
-          "White, black"
-        ]
-      ],
-      "description": [
-        "A hole-in-one plaque for Seville's par-3 14th, with layered wood fairway and green, a dark green border, raised trees and the cart path engraved along the top.",
-        "The actual ball sits on two wooden pegs between engraved plates for the hole details and the ace: the golfer's name, the date, the club and the yardage. Shown here in a white frame and a black frame."
-      ],
-      "photos": [
-        [
-          "seville-14-hole-in-one-white.jpg",
-          "Seville hole 14 hole-in-one plaque in a white frame with the ace ball mounted below the map"
-        ],
-        [
-          "seville-14-hole-in-one-black.jpg",
-          "Seville hole 14 hole-in-one plaque in a black frame, 187 yards with a 6 iron, August 12, 2025"
-        ]
-      ]
-    },
-    {
-      "slug": "seville-16-17",
-      "title": "Seville #16 & #17 Plaque",
-      "category": "hole",
-      "location": "Seville Golf & Country Club · Gilbert, Arizona",
-      "specs": [
-        [
-          "Hole 16",
-          "Par 4 · 290 yds"
-        ],
-        [
-          "Hole 17",
-          "Par 3 · 130 yds"
-        ],
-        [
-          "Includes",
-          "Neighboring homes and streets"
-        ]
-      ],
-      "description": [
-        "Two of Seville's signature holes on one piece: the short par-4 16th and the island-green 17th.",
-        "The surrounding homes and streets are cut and engraved too. It makes a good gift for anyone who lives on the course."
-      ],
-      "photos": [
-        [
-          "seville-16-17-mv2s7omi.jpg",
-          "Seville #16 & #17 - Bill's Version"
-        ],
-        [
-          "seville-16-17-mv2rfm0x.jpg",
-          "Seville #16 & #17 Plaque"
-        ],
-        [
-          "seville-16-17-mv2soin7.jpg",
-          "Looking Down Hole 16"
-        ],
-        [
-          "seville-16-17-mv2sqwgi.jpg",
-          "Holes 16+ 17 - Shinny Lake Version"
-        ],
-        [
-          "seville-16-17-mv2sr0se.jpg",
-          "Seville #16 & #17 Plaque"
-        ],
-        [
-          "seville-16-17-mv2srbif.jpg",
-          "Seville #16 & #17 Plaque"
-        ],
-        [
-          "seville-16-17-delivered.jpg",
-          "Holding a finished Seville Map - Tom's Version"
-        ]
-      ]
-    },
-    {
       "slug": "seville-14",
       "title": "Seville #14 Plaque",
       "category": "hole",
@@ -379,6 +138,343 @@
         [
           "seville-14-muzzvw3o-8.jpg",
           "Seville #14 Plaque"
+        ]
+      ]
+    },
+    {
+      "slug": "seville-16-17",
+      "title": "Seville #16 & #17 Plaque",
+      "category": "hole",
+      "location": "Seville Golf & Country Club · Gilbert, Arizona",
+      "specs": [
+        [
+          "Hole 16",
+          "Par 4 · 290 yds"
+        ],
+        [
+          "Hole 17",
+          "Par 3 · 130 yds"
+        ],
+        [
+          "Includes",
+          "Neighboring homes and streets"
+        ]
+      ],
+      "description": [
+        "Two of Seville's signature holes on one piece: the short par-4 16th and the island-green 17th.",
+        "The surrounding homes and streets are cut and engraved too. It makes a good gift for anyone who lives on the course."
+      ],
+      "photos": [
+        [
+          "seville-16-17-mv2s7omi.jpg",
+          "Seville #16 & #17 - Bill's Version"
+        ],
+        [
+          "seville-16-17-mv2rfm0x.jpg",
+          "Seville #16 & #17 Plaque"
+        ],
+        [
+          "seville-16-17-mv2soin7.jpg",
+          "Looking Down Hole 16"
+        ],
+        [
+          "seville-16-17-mv2sqwgi.jpg",
+          "Holes 16+ 17 - Shinny Lake Version"
+        ],
+        [
+          "seville-16-17-mv2sr0se.jpg",
+          "Seville #16 & #17 Plaque"
+        ],
+        [
+          "seville-16-17-mv2srbif.jpg",
+          "Seville #16 & #17 Plaque"
+        ],
+        [
+          "seville-16-17-delivered.jpg",
+          "Holding a finished Seville Map - Tom's Version"
+        ]
+      ]
+    },
+    {
+      "slug": "santa-cruz-california",
+      "title": "Santa Cruz Map Collection",
+      "category": "city",
+      "location": "Santa Cruz, California",
+      "specs": [
+        [
+          "Style",
+          "Layered wood, graded ocean depths"
+        ]
+      ],
+      "description": [
+        "The Santa Cruz coastline with the hills in stained layers and the ocean stepping down through shades of blue."
+      ],
+      "photos": [
+        [
+          "santa-cruz-california-mv7f6fo6.jpg",
+          "Santa Cruz - Map 1"
+        ],
+        [
+          "santa-cruz-california-mv7f7ok0.jpg",
+          "Santa Cruz Map 2"
+        ],
+        [
+          "santa-cruz-california-mv7f7sej.jpg",
+          "Santa Cruz Map 3"
+        ],
+        [
+          "santa-cruz-california-mv7f7kty.jpg",
+          "Santa Cruz, California Map"
+        ],
+        [
+          "santa-cruz-california-mv7fddb8.jpg",
+          "Santa Cruz Map 1 OG"
+        ],
+        [
+          "santa-cruz-california-mv7fizj5.jpg",
+          "Santa Cruz Map 4.5"
+        ]
+      ]
+    },
+    {
+      "slug": "seville-full-course",
+      "title": "Seville Golf & Country Club Course Map",
+      "category": "course",
+      "location": "Gilbert, Arizona",
+      "specs": [
+        [
+          "Holes",
+          "18"
+        ],
+        [
+          "Par",
+          "72"
+        ],
+        [
+          "Yards",
+          "6,565"
+        ],
+        [
+          "Established",
+          "2001"
+        ],
+        [
+          "Architect",
+          "Gary Panks"
+        ]
+      ],
+      "description": [
+        "All 18 holes at Seville in layered wood, with water, bunkers and greens painted by hand.",
+        "Includes a yardage scale, a compass rose and the course details along the bottom edge."
+      ],
+      "photos": [
+        [
+          "seville-full-course-mv79w4r9.jpg",
+          "Seville Golf & Country Club Course Map"
+        ]
+      ]
+    },
+    {
+      "slug": "shinnecock-hills",
+      "title": "Shinnecock Hills Course Map",
+      "category": "course",
+      "location": "Southampton, New York",
+      "specs": [
+        [
+          "Holes",
+          "18"
+        ],
+        [
+          "Par",
+          "70"
+        ],
+        [
+          "Frames",
+          "Walnut, white, black"
+        ],
+        [
+          "Styles",
+          "Layered or line art"
+        ]
+      ],
+      "description": [
+        "The classic links at Shinnecock Hills, with the years it hosted the U.S. Open listed on the piece.",
+        "Shown in walnut, white and black frames, plus a lighter line-art version."
+      ],
+      "photos": [
+        [
+          "IMG_1767.jpg",
+          "Shinnecock Hills course map in a walnut frame"
+        ],
+        [
+          "IMG_1735.jpg",
+          "Shinnecock Hills map on a shelf"
+        ],
+        [
+          "IMG_1710.jpg",
+          "Shinnecock Hills maps in three frame colors"
+        ],
+        [
+          "IMG_1876.jpg",
+          "Shinnecock Hills line-art and layered versions side by side"
+        ],
+        [
+          "shinnecock-hills-mv7b4311.jpg",
+          "Shinnecock Hills Course Map"
+        ],
+        [
+          "shinnecock-hills-mv7b432w-2.jpg",
+          "Shinnecock Hills Course Map"
+        ],
+        [
+          "shinnecock-hills-mv7b4345-3.jpg",
+          "Shinnecock Hills Course Map"
+        ]
+      ]
+    },
+    {
+      "slug": "keller-15-hole-in-one",
+      "title": "Keller Golf Club #15 Hole-in-One",
+      "category": "ace",
+      "location": "Keller Golf Club · Maplewood, Minnesota",
+      "specs": [
+        [
+          "Hole",
+          "#15"
+        ],
+        [
+          "Yards",
+          "145"
+        ],
+        [
+          "Club",
+          "4 iron"
+        ],
+        [
+          "Ace",
+          "August 11, 1988"
+        ]
+      ],
+      "description": [
+        "A layered hole-in-one plaque for Keller's 15th, with a deep blue pond, mowing lines on the green and hand-placed trees.",
+        "Proof that an ace never gets old. This one went in on August 11, 1988. Any hole at any course can be made the same way, however long ago it happened."
+      ],
+      "photos": [
+        [
+          "keller-15-cover.jpg",
+          "Layered wood hole-in-one plaque of Keller Golf Club hole 15 in a walnut frame, with a blue pond and raised trees"
+        ],
+        [
+          "keller-15-hole-in-one-mv018o68-4.jpg",
+          "Keller Golf Club #15 Hole-in-One"
+        ],
+        [
+          "keller-15-hole-in-one-mv018nvf.jpg",
+          "Keller Golf Club #15 Hole-in-One"
+        ],
+        [
+          "keller-15-hole-in-one-mv018o1t-2.jpg",
+          "Keller Golf Club #15 Hole-in-One"
+        ],
+        [
+          "keller-15-hole-in-one-mv018o44-3.jpg",
+          "Keller Golf Club #15 Hole-in-One"
+        ]
+      ]
+    },
+    {
+      "slug": "seville-14-hole-in-one",
+      "title": "Seville #14 Hole-in-One Plaque",
+      "category": "ace",
+      "location": "Seville Golf & Country Club · Gilbert, Arizona",
+      "specs": [
+        [
+          "Hole",
+          "#14"
+        ],
+        [
+          "Yards",
+          "187"
+        ],
+        [
+          "Club",
+          "6 iron"
+        ],
+        [
+          "Ace",
+          "August 12, 2025"
+        ],
+        [
+          "Frames",
+          "White, black"
+        ]
+      ],
+      "description": [
+        "A hole-in-one plaque for Seville's par-3 14th, with layered wood fairway and green, a dark green border, raised trees and the cart path engraved along the top.",
+        "The actual ball sits on two wooden pegs between engraved plates for the hole details and the ace: the golfer's name, the date, the club and the yardage. Shown here in a white frame and a black frame."
+      ],
+      "photos": [
+        [
+          "seville-14-hole-in-one-white.jpg",
+          "Seville hole 14 hole-in-one plaque in a white frame with the ace ball mounted below the map"
+        ],
+        [
+          "seville-14-hole-in-one-black.jpg",
+          "Seville hole 14 hole-in-one plaque in a black frame, 187 yards with a 6 iron, August 12, 2025"
+        ]
+      ]
+    },
+    {
+      "slug": "seville-17-hole-in-one",
+      "title": "Seville #17 Hole-in-One Plaque",
+      "category": "ace",
+      "location": "Seville Golf & Country Club · Gilbert, Arizona",
+      "specs": [
+        [
+          "Hole",
+          "#17"
+        ],
+        [
+          "Par",
+          "3"
+        ],
+        [
+          "Handicap",
+          "14"
+        ],
+        [
+          "Engraved with",
+          "Name, date, yards, club"
+        ]
+      ],
+      "description": [
+        "Seville's island-green par 3, built in layers of wood with a glossy blue water hazard and raised trees.",
+        "Each plaque is engraved with the golfer's name, the date of the ace, the yardage and the club. These photos show plaques made for several different aces, including one golfer who has holed it twice."
+      ],
+      "photos": [
+        [
+          "seville-17-ingarfield.jpg",
+          "Seville hole 17 hole-in-one plaque, 147 yards with a 7 iron"
+        ],
+        [
+          "IMG_2237.jpg",
+          "Seville hole 17 plaque, 132 yards with a gap wedge"
+        ],
+        [
+          "IMG_1686.jpg",
+          "Seville hole 17 plaque recording two holes-in-one, 2018 and 2020"
+        ],
+        [
+          "IMG_2077.jpg",
+          "Close-up of the raised trees, water and engraved green"
+        ],
+        [
+          "IMG_2338.jpg",
+          "A golfer holding his finished plaque at the clubhouse"
+        ],
+        [
+          "IMG_2238.jpg",
+          "A golfer holding his finished plaque on the course"
         ]
       ]
     },
@@ -483,102 +579,6 @@
         [
           "seville-4-mv7agek1.jpg",
           "Seville #4 Plaque"
-        ]
-      ]
-    },
-    {
-      "slug": "seville-full-course",
-      "title": "Seville Golf & Country Club Course Map",
-      "category": "course",
-      "location": "Gilbert, Arizona",
-      "specs": [
-        [
-          "Holes",
-          "18"
-        ],
-        [
-          "Par",
-          "72"
-        ],
-        [
-          "Yards",
-          "6,565"
-        ],
-        [
-          "Established",
-          "2001"
-        ],
-        [
-          "Architect",
-          "Gary Panks"
-        ]
-      ],
-      "description": [
-        "All 18 holes at Seville in layered wood, with water, bunkers and greens painted by hand.",
-        "Includes a yardage scale, a compass rose and the course details along the bottom edge."
-      ],
-      "photos": [
-        [
-          "seville-full-course-mv79w4r9.jpg",
-          "Seville Golf & Country Club Course Map"
-        ]
-      ]
-    },
-    {
-      "slug": "shinnecock-hills",
-      "title": "Shinnecock Hills Course Map",
-      "category": "course",
-      "location": "Southampton, New York",
-      "specs": [
-        [
-          "Holes",
-          "18"
-        ],
-        [
-          "Par",
-          "70"
-        ],
-        [
-          "Frames",
-          "Walnut, white, black"
-        ],
-        [
-          "Styles",
-          "Layered or line art"
-        ]
-      ],
-      "description": [
-        "The classic links at Shinnecock Hills, with the years it hosted the U.S. Open listed on the piece.",
-        "Shown in walnut, white and black frames, plus a lighter line-art version."
-      ],
-      "photos": [
-        [
-          "IMG_1767.jpg",
-          "Shinnecock Hills course map in a walnut frame"
-        ],
-        [
-          "IMG_1735.jpg",
-          "Shinnecock Hills map on a shelf"
-        ],
-        [
-          "IMG_1710.jpg",
-          "Shinnecock Hills maps in three frame colors"
-        ],
-        [
-          "IMG_1876.jpg",
-          "Shinnecock Hills line-art and layered versions side by side"
-        ],
-        [
-          "shinnecock-hills-mv7b4311.jpg",
-          "Shinnecock Hills Course Map"
-        ],
-        [
-          "shinnecock-hills-mv7b432w-2.jpg",
-          "Shinnecock Hills Course Map"
-        ],
-        [
-          "shinnecock-hills-mv7b4345-3.jpg",
-          "Shinnecock Hills Course Map"
         ]
       ]
     },
