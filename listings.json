@@ -718,6 +718,32 @@
       ]
     },
     {
+      "slug": "sister-bay-wisconsin",
+      "title": "Sister Bay, Wisconsin Map",
+      "category": "city",
+      "location": "Sister Bay · Door County, Wisconsin",
+      "specs": [
+        [
+          "Water",
+          "Green Bay"
+        ],
+        [
+          "Style",
+          "Layered wood, blue-stained water"
+        ]
+      ],
+      "description": [
+        "The village of Sister Bay in Door County, with its streets, docks and shoreline cut in natural wood and raised over a deep blue stained bay.",
+        "Buildings are engraved into each block, the marina piers reach out into the water, and the name is set in raised wood letters, all in a stained wood frame."
+      ],
+      "photos": [
+        [
+          "sister-bay-wisconsin.jpg",
+          "Layered wood map of Sister Bay, Wisconsin, with natural wood streets and shoreline over blue water in a stained frame"
+        ]
+      ]
+    },
+    {
       "slug": "arizona-counties",
       "title": "Arizona Counties Map",
       "category": "city",
