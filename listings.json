@@ -128,14 +128,6 @@
           "Seville #14 Plaque"
         ],
         [
-          "seville-14-muzzvw0c-6.jpg",
-          "Seville #14 Plaque"
-        ],
-        [
-          "seville-14-muzzvw22-7.jpg",
-          "Seville #14 Plaque"
-        ],
-        [
           "seville-14-muzzvw3o-8.jpg",
           "Seville #14 Plaque"
         ]
@@ -391,48 +383,6 @@
       ]
     },
     {
-      "slug": "seville-14-hole-in-one",
-      "title": "Seville #14 Hole-in-One Plaque",
-      "category": "ace",
-      "location": "Seville Golf & Country Club · Gilbert, Arizona",
-      "specs": [
-        [
-          "Hole",
-          "#14"
-        ],
-        [
-          "Yards",
-          "187"
-        ],
-        [
-          "Club",
-          "6 iron"
-        ],
-        [
-          "Ace",
-          "August 12, 2025"
-        ],
-        [
-          "Frames",
-          "White, black"
-        ]
-      ],
-      "description": [
-        "A hole-in-one plaque for Seville's par-3 14th, with layered wood fairway and green, a dark green border, raised trees and the cart path engraved along the top.",
-        "The actual ball sits on two wooden pegs between engraved plates for the hole details and the ace: the golfer's name, the date, the club and the yardage. Shown here in a white frame and a black frame."
-      ],
-      "photos": [
-        [
-          "seville-14-hole-in-one-white.jpg",
-          "Seville hole 14 hole-in-one plaque in a white frame with the ace ball mounted below the map"
-        ],
-        [
-          "seville-14-hole-in-one-black.jpg",
-          "Seville hole 14 hole-in-one plaque in a black frame, 187 yards with a 6 iron, August 12, 2025"
-        ]
-      ]
-    },
-    {
       "slug": "seville-17-hole-in-one",
       "title": "Seville #17 Hole-in-One Plaque",
       "category": "ace",
@@ -641,6 +591,48 @@
         [
           "IMG_2058.jpg",
           "Hammond Golf Club maps in natural, white and grey finishes"
+        ]
+      ]
+    },
+    {
+      "slug": "seville-14-hole-in-one",
+      "title": "Seville #14 Hole-in-One Plaque",
+      "category": "ace",
+      "location": "Seville Golf & Country Club · Gilbert, Arizona",
+      "specs": [
+        [
+          "Hole",
+          "#14"
+        ],
+        [
+          "Yards",
+          "187"
+        ],
+        [
+          "Club",
+          "6 iron"
+        ],
+        [
+          "Ace",
+          "August 12, 2025"
+        ],
+        [
+          "Frames",
+          "White, black"
+        ]
+      ],
+      "description": [
+        "A hole-in-one plaque for Seville's par-3 14th, with layered wood fairway and green, a dark green border, raised trees and the cart path engraved along the top.",
+        "The actual ball sits on two wooden pegs between engraved plates for the hole details and the ace: the golfer's name, the date, the club and the yardage. Shown here in a white frame and a black frame."
+      ],
+      "photos": [
+        [
+          "seville-14-hole-in-one-white.jpg",
+          "Seville hole 14 hole-in-one plaque in a white frame with the ace ball mounted below the map"
+        ],
+        [
+          "seville-14-hole-in-one-black.jpg",
+          "Seville hole 14 hole-in-one plaque in a black frame, 187 yards with a 6 iron, August 12, 2025"
         ]
       ]
     },
