@@ -132,7 +132,7 @@ def build_index():
         f'<button data-f="{c}" aria-pressed="false">{e(n)}</button>' for c, n in CATS.items())
     delivered = "".join(f'<img src="img/t/{e(f)}" alt="{e(a)}" loading="lazy">' for f, a in DATA["delivered"])
     types = "".join(f"<option>{e(t)}</option>" for t in
-                    ["Hole-in-one plaque", "Full course map", "Single signature hole", "City or coastline map"])
+                    ["Hole-in-one plaque", "Full course map", "Single signature hole", "City or coastline map", "Custom piece"])
     body = f"""
 <div class="hero" id="top">
   <div>
@@ -246,7 +246,8 @@ def build_index():
 
 
 TYPE_FOR = {"ace": "Hole-in-one plaque", "hole": "Single signature hole",
-            "course": "Full course map", "city": "City or coastline map"}
+            "course": "Full course map", "city": "City or coastline map",
+            "custom": "Custom piece"}
 
 
 def build_listing(l):
